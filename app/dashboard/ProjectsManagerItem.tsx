@@ -1,10 +1,7 @@
 'use client'
 import { Project } from "@/lib/repository/ProjectsRepo";
 
-type ProjectWithId = Project & { _id: string };
-
-
-export default function Project(props: ProjectWithId) {
+export default function ProjectsManagerItem(props: Project & { _id: string }) {
   const { name, description, _id } = props;
   console.log(JSON.stringify({
     projectId: _id

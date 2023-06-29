@@ -1,11 +1,11 @@
 import { InsertProject } from "./InsertProject";
-import Projects from "./Projects";
+import ProjectsManager from "./ProjectsManager";
 
 export default function Dashboard() {
   return (
     <div>
       <InsertProject />
-      <Projects />
+      <ProjectsManager />
     </div>
   )
 }

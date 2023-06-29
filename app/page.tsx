@@ -5,26 +5,26 @@ export default async function Home() {
 
   return (
     <main className="">
-      <Showcase />
+      <ProjectsShowcase />
     </main>
   )
 }
 
 
-async function Showcase() {
+async function ProjectsShowcase() {
   const projects = await ProjectsRepo.getAll();
   return (
     <div className="flex flex-col p-4">
       {
         projects.map(
-          project => (<Project key={project._id.toString()} {...project} />)
+          project => (<ProjectDisplay key={project._id.toString()} {...project} />)
         )
       }
     </div>
   );
 }
 
-function Project(props: WithId<Project>) {
+function ProjectDisplay(props: WithId<Project>) {
   const { name, description } = props;
   return (
     <div className="p-4 rounded-sm border-white border">
