@@ -1,6 +1,7 @@
 import ProjectsRepo from "@/lib/repository/ProjectsRepo";
 import { NextResponse, type NextRequest } from "next/server";
 
+/* INSERT PROJECTS */
 export async function POST(req: NextRequest) {
   const { name, description } = await req.json();
   
