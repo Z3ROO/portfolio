@@ -1,10 +1,6 @@
 import { ObjectId } from 'mongodb';
 import Repository from './config/repository';
-
-export interface Project {
-  name: string
-  description: string
-}
+import { Project } from '@/lib/types';
 
 class Projects extends Repository<Project> {
   constructor() {

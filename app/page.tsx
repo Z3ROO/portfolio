@@ -1,4 +1,5 @@
-import ProjectsRepo, { Project } from '@/lib/repository/ProjectsRepo';
+import ProjectsRepo from '@/lib/repository/ProjectsRepo';
+import { Project } from '@/lib/types';
 import { WithId } from 'mongodb';
 
 export default async function Home() {

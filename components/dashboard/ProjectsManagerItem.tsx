@@ -1,11 +1,9 @@
 'use client'
-import { Project } from "@/lib/repository/ProjectsRepo";
+import { Project } from "@/lib/types";
 
 export default function ProjectsManagerItem(props: Project & { _id: string }) {
   const { name, description, _id } = props;
-  console.log(JSON.stringify({
-    projectId: _id
-  }))
+  
   return (
     <div className="relative p-4 rounded-sm border-white border">
       <button 
