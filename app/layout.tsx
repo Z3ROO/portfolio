@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className+' flex flex-col'}>
         <nav>
           <ul className="flex">
             <NavLi>
@@ -28,12 +28,14 @@ export default function RootLayout({
             </NavLi>
           </ul>
         </nav>
-        {children}
+        <div className='h-full w-full'>
+          {children}
+        </div>
       </body>
     </html>
   )
 }
 
 function NavLi({children}: {children: ReactNode}) {
-  return <li className="m-2">{children}</li>
+  return <li className="p-2">{children}</li>
 }
