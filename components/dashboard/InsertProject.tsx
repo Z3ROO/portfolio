@@ -1,8 +1,9 @@
 'use client'
 
-import { FormEvent, useState } from "react";
+import { useState } from "react";
 
-const input_TW = 'text-black';
+const input_TW = 'text-black w-full';
+const label_TW = 'flex flex-col p-2 w-full';
 
 export function InsertProject() {
   const [name, setName] = useState('');
@@ -22,11 +23,16 @@ export function InsertProject() {
       });
 
       const response = await request.json();
-      console.log(response)
-    }}>
-      <input className={input_TW+``} type="text" value={name} onChange={e => setName(e.target.value)} />
-      <input className={input_TW+``} type="text" value={description} onChange={e => setDescription(e.target.value)} />
-      <button form="insert-project">Insert</button>
+    }} className="flex flex-col items-start p-2 w-96 border border-white rounded-sm">
+      <label className={label_TW+``}>
+        <span>Name:</span>
+        <input className={input_TW+``} type="text" value={name} onChange={e => setName(e.target.value)} />
+      </label>
+      <label className={label_TW+``}>
+        <span>Description:</span>
+        <textarea className={input_TW+` h-24 resize-none`} value={description} onChange={e => setDescription(e.target.value)} />
+      </label>
+      <button className="m-2" form="insert-project">Insert</button>
     </form>
   );
 }
