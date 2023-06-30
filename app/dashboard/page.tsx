@@ -1,11 +1,10 @@
-import { Button } from "@/components/Button";
-import ProjectsManager from "@/components/dashboard/ProjectsManager";
-import Link from "next/link";
+import { ReactNode } from "react";
 
-export default function Dashboard() {
+
+export default function Dashboard({children}: {children: ReactNode}) {
   return (
     <div>
-      <ProjectsManager />
+      {children}
     </div>
   )
 }
