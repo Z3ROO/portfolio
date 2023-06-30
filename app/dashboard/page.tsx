@@ -5,9 +5,6 @@ import Link from "next/link";
 export default function Dashboard() {
   return (
     <div>
-      <Link href={'/dashboard/new-project'}>
-        <Button>New Project</Button>
-      </Link>
       <ProjectsManager />
     </div>
   )
