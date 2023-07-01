@@ -45,7 +45,7 @@ export default function SectionSwitcher({ children }: {children: ReactNode}) {
   }
 
   return (
-    <div>
+    <div className="w-full h-full flex flex-col">
       <div className="p-1 border border-white rounded-sm w-min mx-auto">
         <ul className="relative flex rounded-sm" ref={ulRef}>
           <li id="Projects" className={li_TW+`z-10`} onClick={clickHandler('Projects')}>Projects</li>
