@@ -1,0 +1,7 @@
+{
+  "name": "Sudoku",
+  "id": "sudoku",
+  "tech": [
+    "React", "Typescript", "NodeJs"
+  ]
+}
