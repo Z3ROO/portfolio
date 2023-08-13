@@ -12,6 +12,7 @@ export async function generateStaticParams() {
 
 export default async function ProjectPage({params, asModal}: {params: {project_id: string}, asModal?: boolean}) {
   const project = await GetProject(params.project_id);
+
   return (
     <div className="relative flex justify-center w-full h-full">
       {
@@ -28,7 +29,9 @@ export default async function ProjectPage({params, asModal}: {params: {project_i
         <div className="w-full p-8">
           <Image src={`/projects/${project.id}/demo.jpg`} width={500}  height={500} alt="demo"/>
         </div>
-        <p>{project.description}</p>
+        <pre>
+          <p>{project.description}</p>
+        </pre>
       </div>
     </div>
   );
