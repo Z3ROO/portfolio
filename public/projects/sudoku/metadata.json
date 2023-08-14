@@ -2,7 +2,10 @@
   "name": "Sudoku",
   "shortDescription": "A sudoku game and a custom board generator made from scratch.",
   "id": "sudoku",
-  "demoUrl":"",
+  "links": {
+    "github": "https://github.com/z3roo/sudoku",
+    "demo": ""
+  },
   "technologies": [
     "reactjs", "typescript", "nodejs"
   ]

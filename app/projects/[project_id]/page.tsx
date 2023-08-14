@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image";
 import ClientBackBTN from "./clientBackBtn";
 import IconList from "./IconList";
+import { Button } from "@/components/Button";
 
 export async function generateStaticParams() {
   const ids = await GetAllProjectIds();
@@ -25,12 +26,22 @@ export default async function ProjectPage({params, asModal}: {params: {project_i
         </Link>
         )
       } 
-      <div className="max-w-5xl mt-16">
-        <h1 className="font-bold text-5xl">{project.name}</h1>
-        <div className="w-full p-8">
+      <div className="max-w-5xl mt-16 w-full">
+        <div className="flex items-center">
+          <h1 className="font-bold text-5xl px-4 py-8">
+            {project.name}
+          </h1>
+          <Link href={project.links.github} target="_blank">
+            <Button className="mx-4 my-8">Github</Button>
+          </Link>
+          <Link href={project.links.demo} target="_blank">
+            <Button className="mx-4 my-8">Demo</Button>
+          </Link>
+        </div>
+        <div className="w-full p-4 bg-gray-900">
           <Image src={`/projects/${project.id}/demo.jpg`} width={500}  height={500} alt="demo"/>
         </div>
-        <div className="flex">
+        <div className="flex flex-wrap content-start p-4">
           <IconList technologies={project.technologies} />
         </div>
         <pre>
