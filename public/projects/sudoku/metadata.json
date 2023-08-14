@@ -2,7 +2,7 @@
   "name": "Sudoku",
   "id": "sudoku",
   "demoUrl":"",
-  "tech": [
-    "React", "Typescript", "NodeJs"
+  "technologies": [
+    "reactjs", "typescript", "nodejs"
   ]
 }

@@ -3,6 +3,7 @@ import GetProject from "@/util/GetProject";
 import Link from "next/link"
 import Image from "next/image";
 import ClientBackBTN from "./clientBackBtn";
+import IconList from "./IconList";
 
 export async function generateStaticParams() {
   const ids = await GetAllProjectIds();
@@ -28,6 +29,9 @@ export default async function ProjectPage({params, asModal}: {params: {project_i
         <h1 className="font-bold text-5xl">{project.name}</h1>
         <div className="w-full p-8">
           <Image src={`/projects/${project.id}/demo.jpg`} width={500}  height={500} alt="demo"/>
+        </div>
+        <div className="flex">
+          <IconList technologies={project.technologies} />
         </div>
         <pre>
           <p>{project.description}</p>
