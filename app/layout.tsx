@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className+' h-screen'}>
-        <div className='h-full w-full'>
+        <div className='h-screen w-screen bg-gray-900'>
           {children}
           {modal}
         </div>
