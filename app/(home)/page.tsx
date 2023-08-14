@@ -53,7 +53,7 @@ async function ProjectDisplay(props: {id: string}) {
               <h3 className="text-5xl font-bold break-words">{project.name}</h3>
             </div>
           </div>
-          <div className="text-justify mt-4 break-words">{project.description} {project.description} {project.description}</div>
+          <div className="text-justify mt-4 break-words">{project.shortDescription ?? project.description}</div>
         </div>
       </Link>
     </div>

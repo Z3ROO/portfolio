@@ -1,5 +1,6 @@
 {
   "name": "Sudoku",
+  "shortDescription": "A sudoku game and a custom board generator made from scratch.",
   "id": "sudoku",
   "demoUrl":"",
   "technologies": [
