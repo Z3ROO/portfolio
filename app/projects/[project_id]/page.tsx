@@ -16,7 +16,7 @@ export default async function ProjectPage({params, asModal}: {params: {project_i
   const project = await GetProject(params.project_id);
 
   return (
-    <div className="relative flex justify-center w-full h-full">
+    <div className="relative  w-full h-full overflow-x-hidden">
       {
         asModal ? (
           <ClientBackBTN />
@@ -25,28 +25,33 @@ export default async function ProjectPage({params, asModal}: {params: {project_i
           <button className="px-1 py-2 rounded-sm border border-white">Back</button>
         </Link>
         )
-      } 
-      <div className="max-w-5xl mt-16 w-full">
-        <div className="flex items-center">
-          <h1 className="font-bold text-5xl px-4 py-8">
-            {project.name}
-          </h1>
-          <Link href={project.links.github} target="_blank">
-            <Button className="mx-4 my-8">Github</Button>
-          </Link>
-          <Link href={project.links.demo} target="_blank">
-            <Button className="mx-4 my-8">Demo</Button>
-          </Link>
+      }
+      <div className="w-full h-full overflow-auto  custom-scrollbar flex justify-center overflow-x-hidden">
+        <div className="max-w-5xl mt-16 w-full">
+          <div className="flex items-center">
+            <h1 className="font-bold text-5xl px-4 py-8 text-red-300">
+              {project.name}
+            </h1>
+            <Link href={project.links.github} target="_blank">
+              <Button className="mx-4 my-8">Github</Button>
+            </Link>
+            <Link href={project.links.demo} target="_blank">
+              <Button className="mx-4 my-8">Demo</Button>
+            </Link>
+          </div>
+          <div className="w-full p-4 bg-gray-900 relative">
+            <div className="relative z-10">
+              <Image src={`/projects/${project.id}/demo.jpg`} width={500}  height={500} alt="demo"/>
+              <div className="flex flex-wrap content-start p-4">
+                <IconList technologies={project.technologies} />
+              </div>
+            </div>
+            <div className="w-screen h-full bg-gray-900 absolute top-0 -left-64 z-0"/>
+          </div>        
+          <pre className="pt-8 pb-16">
+            <p>{project.description}</p>
+          </pre>
         </div>
-        <div className="w-full p-4 bg-gray-900">
-          <Image src={`/projects/${project.id}/demo.jpg`} width={500}  height={500} alt="demo"/>
-        </div>
-        <div className="flex flex-wrap content-start p-4">
-          <IconList technologies={project.technologies} />
-        </div>
-        <pre>
-          <p>{project.description}</p>
-        </pre>
       </div>
     </div>
   );
