@@ -1,6 +1,6 @@
 {
   "name": "Sudoku",
-  "shortDescription": "A sudoku game and a custom board generator made from scratch.",
+  "shortDescription": "A sudoku game and with a always valid board generator made from scratch.",
   "id": "sudoku",
   "links": {
     "github": "https://github.com/z3roo/sudoku",
