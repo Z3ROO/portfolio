@@ -1,12 +1,12 @@
 {
   "name": "Sudoku",
-  "shortDescription": "A sudoku game and with a always valid board generator made from scratch.",
+  "shortDescription": "An authentic Sudoku game featuring an in-house board generator for always valid puzzles.",
   "id": "sudoku",
   "links": {
     "github": "https://github.com/z3roo/sudoku",
     "demo": ""
   },
   "technologies": [
-    "reactjs", "typescript", "nodejs"
+    "typescript", "reactjs", "nodejs"
   ]
 }
