@@ -2,7 +2,7 @@ import GetAllProjectIds from "@/util/GetAllProjectIds";
 import GetProject from "@/util/GetProject";
 import Link from "next/link"
 import Image from "next/image";
-import ClientBackBTN from "./clientBackBtn";
+import ClientBackBTN from "../../../components/clientBackBtn";
 import IconList from "../../../components/IconList";
 import { Button } from "@/components/Button";
 
@@ -22,7 +22,7 @@ export default async function ProjectPage({params, asModal}: {params: {project_i
           <ClientBackBTN />
         ) : (
         <Link className="absolute top-4 left-4" href={'/'}>
-          <button className="px-1 py-2 rounded-sm border border-white">Back</button>
+          <Button className="">Back</Button>
         </Link>
         )
       }
