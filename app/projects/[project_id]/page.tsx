@@ -3,7 +3,7 @@ import GetProject from "@/util/GetProject";
 import Link from "next/link"
 import Image from "next/image";
 import ClientBackBTN from "./clientBackBtn";
-import IconList from "./IconList";
+import IconList from "../../../components/IconList";
 import { Button } from "@/components/Button";
 
 export async function generateStaticParams() {
