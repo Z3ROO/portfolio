@@ -6,16 +6,11 @@ export default async function GetProject(project_id: string) {
   const rawMetadata = await fs.readFile(path.join(projectDir, 'metadata.json'), {encoding: 'utf-8'});
   const metadata = JSON.parse(rawMetadata);
 
-  const rawDescription = await fs.readFile(path.join(projectDir, 'description.md'), {encoding: 'utf-8'});
-  const description = mdParse(rawDescription);
+  const description = await fs.readFile(path.join(projectDir, 'description.txt'), {encoding: 'utf-8'});
 
   return {
     ...metadata,
     description
   }
 
-}
-
-function mdParse(rawDescription: string) {
-  return rawDescription;
 }
