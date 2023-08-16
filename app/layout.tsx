@@ -28,9 +28,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-function NavLi({children}: {children: ReactNode}) {
-  return (
-    <li className="p-2">{children}</li>
-  );
-}
