@@ -7,6 +7,6 @@
     "demo": "https://sudoku-przero.vercel.app/"
   },
   "technologies": [
-    "typescript", "reactjs", "nodejs"
+    "typescript", "reactjs", "nodejs", "styled-components"
   ]
 }
