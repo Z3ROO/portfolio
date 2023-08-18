@@ -4,7 +4,7 @@
   "id": "sudoku",
   "links": {
     "github": "https://github.com/z3roo/sudoku",
-    "demo": ""
+    "demo": "https://sudoku-przero.vercel.app/"
   },
   "technologies": [
     "typescript", "reactjs", "nodejs"
