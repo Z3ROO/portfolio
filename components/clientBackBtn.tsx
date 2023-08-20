@@ -6,7 +6,7 @@ import { Button } from "./Button";
 export default function ClientBackBTN() {
   const router = useRouter();
   return (
-    <Button className="absolute top-4 left-4"
+    <Button className=""
       onClick={() => {
         router.back()
       }}

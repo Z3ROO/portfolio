@@ -32,7 +32,7 @@ export default async function ProjectPage({params, asModal}: {params: {project_i
 
 function BackButton({asModal}: {asModal: boolean}) {
   return (
-    <>
+    <div className="absolute top-4 left-4 z-10 ">
       {
         asModal ? (
           <ClientBackBTN />
@@ -42,7 +42,7 @@ function BackButton({asModal}: {asModal: boolean}) {
         </Link>
         )
       }
-    </>
+    </div>
   )
 }
 
