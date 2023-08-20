@@ -5,6 +5,7 @@ import Image from "next/image";
 import ClientBackBTN from "../../../components/clientBackBtn";
 import IconList from "../../../components/IconList";
 import { Button } from "@/components/Button";
+import dynamic from "next/dynamic";
 
 export async function generateStaticParams() {
   const ids = await GetAllProjectIds();
@@ -22,6 +23,7 @@ export default async function ProjectPage({params, asModal}: {params: {project_i
         <div className="max-w-5xl mt-16 w-full">
           <Header project={project} />
           <Hero project={project} />
+          <CustomBody project_id={params.project_id} />
         </div>
       </div>
     </div>
@@ -77,4 +79,26 @@ function Hero({project}: { project: any}) {
         </pre>
       </>
   )
+}
+
+async function CustomBody({project_id}: {project_id: string}) {
+  const CustomBodyComponent = dynamic(async () => {
+      let component: any;
+      
+      try {
+        component = await import(`../(projects-custom-body)/${project_id}`)
+      }
+      catch(err) {
+        component = NoCustomBody;
+      }
+
+      return component;
+    });
+
+  return <CustomBodyComponent />
+}
+
+
+function NoCustomBody () {
+  return null
 }
