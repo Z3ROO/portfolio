@@ -1,6 +1,6 @@
 {
   "name": "Sudoku",
-  "shortDescription": "An authentic Sudoku game featuring an in-house board generator for always valid puzzles.",
+  "shortDescription": " An authentic Sudoku game featuring an in-house board generator for always valid puzzles.",
   "id": "sudoku",
   "links": {
     "github": "https://github.com/z3roo/sudoku",

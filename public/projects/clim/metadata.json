@@ -1,6 +1,6 @@
 {
   "name": "CLI Maker",
-  "shortDescription": "An authentic Sudoku game featuring an in-house board generator for always valid puzzles.",
+  "shortDescription": "  A simple command line tool maker that parses and organize the arguments passed through argv.",
   "id": "clim",
   "links": {
     "github": "https://github.com/z3roo/clim",

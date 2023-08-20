@@ -1,6 +1,2 @@
- ### This is a sudoku project.
- 
- - Techs:
-    - Typescript
-    - NodeJs
-    - ReactJs
+  A simple command line tool maker. All that CLIM does is to parse argv parameters and organizing commands, subcommands and flags.
+The tool is created as function that receive the parameters passed as argv arguments.
