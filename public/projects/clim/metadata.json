@@ -1,0 +1,12 @@
+{
+  "name": "CLI Maker",
+  "shortDescription": "An authentic Sudoku game featuring an in-house board generator for always valid puzzles.",
+  "id": "clim",
+  "links": {
+    "github": "https://github.com/z3roo/clim",
+    "demo": "https://www.npmjs.com/package/@z3ro/clim"
+  },
+  "technologies": [
+    "typescript", "nodejs"
+  ]
+}

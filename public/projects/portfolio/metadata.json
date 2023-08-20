@@ -1,0 +1,12 @@
+{
+  "name": "Portfolio",
+  "shortDescription": "An authentic Sudoku game featuring an in-house board generator for always valid puzzles.",
+  "id": "portfolio",
+  "links": {
+    "github": "https://github.com/z3roo/portfolio",
+    "demo": "https://przero.vercel.app"
+  },
+  "technologies": [
+    "typescript", "nextjs"
+  ]
+}
