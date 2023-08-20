@@ -6,7 +6,7 @@ import GetProject from "@/util/GetProject";
 
 export default async function Home() {
   return (
-    <main className="flex flex-col items-center">
+    <main className="flex flex-col items-center h-[calc(100vh-7rem)]">
       <SortingSection />
       <ProjectsShowcase />
     </main>
@@ -17,7 +17,7 @@ async function ProjectsShowcase() {
   const ids = await GetAllProjectIds();
   
   return (
-    <div className="flex w-10/12 flex-wrap">
+    <div className="flex w-10/12 flex-wrap overflow-auto custom-scrollbar">
       {
         ids.map(id => {
           return <ProjectDisplay key={id} id={id}/>
@@ -34,7 +34,7 @@ async function ProjectDisplay(props: {id: string}) {
   return (
     <div className="w-1/2 shrink-0 p-4">
       <Link href={`/projects/${id}`}>
-        <div className="p-6 rounded-sm border-red-500 border-opacity-30 bg-gradient-to-bl from-gray-600 to-gray-800 border w-full cursor-pointer hover:scale-[101%] transition-transform">
+        <div className="h-full p-6 rounded-sm border-red-500 border-opacity-30 bg-gradient-to-bl from-gray-600 to-gray-800 border w-full cursor-pointer hover:scale-[101%] transition-transform">
           <div className="flex">
             <div className="w-3/5 bg-gray-900 h-40 shrink-0">
               <Image src={`/projects/${project.id}/demo.jpg`} width={500}  height={500} alt="demo" />
