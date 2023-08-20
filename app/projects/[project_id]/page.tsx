@@ -20,7 +20,7 @@ export default async function ProjectPage({params, asModal}: {params: {project_i
     <div className="relative  w-full h-full overflow-x-hidden">
       <BackButton asModal />
       <div className="w-full h-full overflow-auto  custom-scrollbar flex justify-center overflow-x-hidden">
-        <div className="max-w-5xl mt-16 w-full">
+        <div className="max-w-5xl mt-16 mb-28 w-full h-full">
           <Header project={project} />
           <Hero project={project} />
           <CustomBody project_id={params.project_id} />
@@ -73,9 +73,9 @@ function Hero({project}: { project: any}) {
             </div>
           </div>
           <div className="w-screen h-full bg-gray-900 absolute top-0 -left-64 z-0"/>
-        </div>        
-        <pre className="pt-8 pb-16">
-          <p>{project.description}</p>
+        </div>
+        <pre className="pt-8 pb-16 text-xl">
+          <p className="whitespace-pre-wrap">{project.description}</p>
         </pre>
       </>
   )
