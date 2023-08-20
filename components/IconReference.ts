@@ -3,12 +3,13 @@ import { IoLogoNodejs } from 'react-icons/io';
 import { FaReact } from 'react-icons/fa';
 import { GrTechnology } from 'react-icons/gr';
 import { IconType } from 'react-icons';
-import { SiStyledcomponents } from 'react-icons/si';
+import { SiStyledcomponents, SiNextdotjs } from 'react-icons/si';
 
 const IconReference: { [key: string]: IconType } = {
   'typescript': BiLogoTypescript,
   'reactjs': FaReact,
   'nodejs': IoLogoNodejs,
+  'nextjs': SiNextdotjs,
   'styled-components': SiStyledcomponents,
   'no-icon': GrTechnology
 }
