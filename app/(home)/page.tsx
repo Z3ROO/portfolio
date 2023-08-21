@@ -32,16 +32,19 @@ async function ProjectDisplay(props: {id: string}) {
   const project = await GetProject(id);
 
   return (
-    <div className="w-1/2 shrink-0 p-4">
+    <div className="w-1/3 shrink-0 p-6">
       <Link href={`/projects/${id}`}>
-        <div className="h-full p-6 rounded-sm border-red-500 border-opacity-30 bg-gradient-to-bl from-gray-600 to-gray-800 border w-full cursor-pointer hover:scale-[101%] transition-transform">
-          <div className="flex">
-            <div className="w-3/5 bg-gray-900 shrink-0">
-              <Image src={`/projects/${project.id}/thumbnail.jpg`} width={480}  height={300} alt="thumbnail" />
-            </div>
-            <div className="w-2/5 p-2">
-              <h3 className="text-5xl font-bold break-words text-red-300">{project.name}</h3>
-            </div>
+        <div className="group h-full p-8 rounded-sm border-red-500 border-opacity-30 bg-gradient-to-bl from-gray-600 to-gray-800 border w-full cursor-pointer hover:scale-[101%] transition-transform">
+          <div className="flex flex-col">  
+              <h3 className="text-5xl font-bold break-words text-red-300 p-2 pb-6">{project.name}</h3>
+              <div className="relative">
+                <div className="absolute bg-red-400 w-full h-full bg-opacity-30 group-hover:bg-opacity-0 transition-all duration-500"></div>
+                <Image 
+                  src={`/projects/${project.id}/thumbnail.jpg`} 
+                  className="opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" 
+                  width={720}  height={450} alt="thumbnail" 
+                />
+              </div>
           </div>
           <div className="text-justify mt-4 break-words">{project.shortDescription ?? project.description}</div>
         </div>
