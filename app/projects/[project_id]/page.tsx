@@ -17,13 +17,15 @@ export default async function ProjectPage({params, asModal}: {params: {project_i
   const project = await GetProject(params.project_id);
 
   return (
-    <div className="relative  w-full h-full overflow-x-hidden">
+    <div className="relative w-full h-full overflow-x-hidden">
       <BackButton asModal />
       <div className="w-full h-full overflow-auto  custom-scrollbar flex justify-center overflow-x-hidden">
-        <div className="max-w-5xl mt-16 mb-28 w-full h-full">
-          <Header project={project} />
-          <Hero project={project} />
-          <CustomBody project_id={params.project_id} />
+        <div className="max-w-5xl w-full flex flex-col">
+          <div className="pt-16 pb-20">
+            <Header project={project} />
+            <Hero project={project} />
+            <CustomBody project_id={params.project_id} />
+          </div>
         </div>
       </div>
     </div>
@@ -32,7 +34,7 @@ export default async function ProjectPage({params, asModal}: {params: {project_i
 
 function BackButton({asModal}: {asModal: boolean}) {
   return (
-    <div className="absolute top-4 left-4 z-10 ">
+    <div className="absolute top-4 left-4 z-20 ">
       {
         asModal ? (
           <ClientBackBTN />
@@ -53,10 +55,10 @@ function Header({project} : { project: any}) {
         {project.name}
       </h1>
       <Link href={project.links.github} target="_blank">
-        <Button className="mx-4 my-8">Github</Button>
+        <Button className="mx-4 ">Github</Button>
       </Link>
       <Link href={project.links.demo} target="_blank">
-        <Button className="mx-4 my-8">Demo</Button>
+        <Button className="mx-4 ">Demo</Button>
       </Link>
     </div>
   )
