@@ -36,8 +36,8 @@ async function ProjectDisplay(props: {id: string}) {
       <Link href={`/projects/${id}`}>
         <div className="h-full p-6 rounded-sm border-red-500 border-opacity-30 bg-gradient-to-bl from-gray-600 to-gray-800 border w-full cursor-pointer hover:scale-[101%] transition-transform">
           <div className="flex">
-            <div className="w-3/5 bg-gray-900 h-40 shrink-0">
-              <Image src={`/projects/${project.id}/thumbnail.jpg`} width={500}  height={500} alt="thumbnail" />
+            <div className="w-3/5 bg-gray-900 shrink-0">
+              <Image src={`/projects/${project.id}/thumbnail.jpg`} width={480}  height={300} alt="thumbnail" />
             </div>
             <div className="w-2/5 p-2">
               <h3 className="text-5xl font-bold break-words text-red-300">{project.name}</h3>
