@@ -1,2 +1,3 @@
-  A simple command line tool maker. All that CLIM does is to parse argv parameters and organizing commands, subcommands and flags.
-The tool is created as function that receive the parameters passed as argv arguments.
+A simple command line tool maker. All that CLIM does is to parse argv parameters and organizing commands, subcommands and flags.
+
+The tool is created as simple function that receive the parameters passed as argv arguments.
