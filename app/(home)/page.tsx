@@ -46,7 +46,11 @@ async function ProjectDisplay(props: {id: string}) {
                 />
               </div>
           </div>
-          <div className="text-justify mt-4 break-words">{project.shortDescription ?? project.description}</div>
+          <div className="text-justify mt-4 break-words font-roboto">
+            <p>
+              {project.shortDescription ?? project.description}
+            </p>
+          </div>
         </div>
       </Link>
     </div>
