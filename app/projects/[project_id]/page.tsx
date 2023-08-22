@@ -23,7 +23,7 @@ export default async function ProjectPage({params, asModal}: {params: {project_i
         <div className="max-w-5xl w-full flex flex-col">
           <div className="pt-16 pb-20">
             <Header project={project} />
-            <Hero project={project} />
+            <Hero {...{project, asModal}} />
             <CustomBody project_id={params.project_id} />
           </div>
         </div>
@@ -64,7 +64,7 @@ function Header({project} : { project: any}) {
   )
 }
 
-function Hero({project}: { project: any}) {
+function Hero({project, asModal}: { project: any, asModal: boolean|undefined}) {
   return (
       <>
         <div className="w-full p-4 bg-gray-900 relative">
@@ -74,10 +74,10 @@ function Hero({project}: { project: any}) {
               <IconList technologies={project.technologies} />
             </div>
           </div>
-          <div className="w-screen h-full bg-gray-900 absolute top-0 -left-64 z-0"/>
+          <div className={`w-screen h-full ${asModal ? 'bg-gray-900' : 'bg-gray-800'} absolute top-0 -left-64 z-0`} />
         </div>
-        <pre className="pt-8 pb-16 text-xl">
-          <p className="whitespace-pre-wrap">{project.description}</p>
+        <pre className="pt-8 pb-16 text-2xl">
+          <p className="whitespace-pre-wrap text-justify">{project.description}</p>
         </pre>
       </>
   )
