@@ -6,7 +6,7 @@ export default function CodeBlock({ children }: {children: string}) {
       <div className="w-full bg-red-900 bg-opacity-30 p-2 text-sm">
         <span>Typescript</span>
       </div>
-      <div className="p-4">
+      <div className="p-4 overflow-x-auto custom-scrollbar">
         <pre>
           <HighlightJs code={children} />
         </pre>
