@@ -18,7 +18,15 @@ export default async function ProjectPage({params, asModal}: {params: {project_i
 
   return (
     <div className="relative w-full h-full overflow-x-hidden">
-      <BackButton asModal />
+      {
+        !asModal && (
+          <div className="absolute top-4 left-4 z-20 ">
+            <Link className="absolute top-4 left-4" href={'/'}>
+              <Button className="">Back</Button>
+            </Link>
+          </div>
+        )
+      }
       <div className="w-full h-full overflow-auto  custom-scrollbar flex justify-center overflow-x-hidden">
         <div className="max-w-5xl w-full flex flex-col">
           <div className="pt-16 pb-20">
