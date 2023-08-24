@@ -1,0 +1,12 @@
+{
+  "name": "Inbox",
+  "shortDescription": "Inspired by GTD inbox, this is a personal product for organizing ideas and goals.",
+  "id": "inbox",
+  "links": {
+    "github": "https://github.com/z3roo/yoriichi",
+    "demo": ""
+  },
+  "technologies": [
+    "typescript", "reactjs", "react-query", "tailwindcss", "nodejs", "expressjs", "mongodb", "jest"
+  ]
+}
