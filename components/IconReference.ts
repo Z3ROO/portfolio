@@ -1,16 +1,21 @@
-import { BiLogoTypescript } from 'react-icons/bi';
+import { BiLogoTypescript, BiLogoMongodb, BiLogoTailwindCss } from 'react-icons/bi';
 import { IoLogoNodejs } from 'react-icons/io';
 import { FaReact } from 'react-icons/fa';
 import { GrTechnology } from 'react-icons/gr';
 import { IconType } from 'react-icons';
-import { SiStyledcomponents, SiNextdotjs } from 'react-icons/si';
+import { SiStyledcomponents, SiNextdotjs, SiReactquery, SiJest, SiExpress } from 'react-icons/si';
 
 const IconReference: { [key: string]: IconType } = {
   'typescript': BiLogoTypescript,
   'reactjs': FaReact,
-  'nodejs': IoLogoNodejs,
-  'nextjs': SiNextdotjs,
+  'react-query': SiReactquery,
+  'tailwindcss': BiLogoTailwindCss,
   'styled-components': SiStyledcomponents,
+  'nodejs': IoLogoNodejs,
+  'expressjs': SiExpress,
+  'mongodb': BiLogoMongodb,
+  'nextjs': SiNextdotjs,
+  'jest': SiJest,
   'no-icon': GrTechnology
 }
 
