@@ -1,3 +1,0 @@
-A fully functional Sudoku game with an in-house board generator for always-valid puzzles. 
-
-This game boasts an interactive user interface and incorporates common functionalities found in Sudoku games, including the ability to undo and redo changes, make note of candidate numbers for cells, and more
