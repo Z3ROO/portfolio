@@ -10,6 +10,7 @@ From the inbox, to-dos can be created but also created directly. Theres also a g
 
 const inboxMetadata: ProjectMetadata = {
   "name": "Inbox",
+  priority: 2,
   "shortDescription": "Inspired by GTD inbox, this is a personal product for organizing ideas and goals.",
   description,
   "id": "inbox",

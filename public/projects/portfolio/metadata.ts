@@ -8,6 +8,7 @@ Lavaraging NextJs to build a fully static web application with minor exceptions 
 
 const portfolioMetadata: ProjectMetadata = {
   "name": "Portfolio",
+  priority: 4,
   "shortDescription": " My personal portfolio, designed to be a catalog of projects.",
   description,
   "id": "portfolio",

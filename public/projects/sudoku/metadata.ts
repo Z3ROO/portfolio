@@ -8,6 +8,7 @@ This game boasts an interactive user interface and incorporates common functiona
 
 const sudokuMetadata: ProjectMetadata = {
   "name": "Sudoku",
+  priority: 1,
   "shortDescription": " An authentic Sudoku game featuring an in-house board generator for always valid puzzles.",
   description,
   "id": "sudoku",
