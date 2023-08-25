@@ -1,4 +1,4 @@
-import GetAllProjects from "@/util/GetAllProjects";
+import GetProjectsIds from "@/util/GetProjectsIds";
 import Link from "next/link";
 import Image from "next/image";
 import ClientBackBTN from "../../../components/clientBackBtn";
@@ -7,11 +7,11 @@ import { Button } from "@/components/Button";
 import dynamic from "next/dynamic";
 import GetProject from "@/util/GetProject";
 
-// export async function generateStaticParams() {
-//   const projects = await GetAllProjects();
-  
-//   return projects.map(project => ({project: project}));
-// }
+export async function generateStaticParams() {
+  const projects = await GetProjectsIds();
+  //IS THIS REALLY WORKING
+  return projects.map(project_id => ({project_id}));
+}
 
 export default async function ProjectPage({params, asModal}: {params: {project: any, project_id: string}, asModal?: boolean}) {
   const project = await GetProject(params.project_id);
