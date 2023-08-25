@@ -1,11 +1,8 @@
-import fs from 'fs/promises';
-import path from 'path';
 import GetProject from './GetProject';
+import GetProjectsIds from './GetProjectsIds';
 
-export default async function GetAllProject() {
-  const projectDir = path.join(process.cwd(),'/public/projects/')
-  
-  const ids = await fs.readdir(projectDir);
+export default async function GetAllProject() {  
+  const ids = await GetProjectsIds();
   const projects = await Promise.all(ids.map((project_id) => GetProject(project_id)));
   
   return projects;
