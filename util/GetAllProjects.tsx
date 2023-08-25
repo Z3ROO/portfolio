@@ -8,7 +8,7 @@ export default async function GetAllProject(): Promise<ProjectMetadata[]> {
   
   projects.sort((a: ProjectMetadata, b: ProjectMetadata) => {
     return a.priority - b.priority
-  })
+  });
 
   return projects;
 }
