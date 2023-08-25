@@ -1,19 +1,19 @@
-import GetAllProjectIds from "@/util/GetAllProjectIds";
-import GetProject from "@/util/GetProject";
+import GetAllProjects from "@/util/GetAllProjects";
 import Link from "next/link";
 import Image from "next/image";
 import ClientBackBTN from "../../../components/clientBackBtn";
 import IconList from "../../../components/IconList";
 import { Button } from "@/components/Button";
 import dynamic from "next/dynamic";
+import GetProject from "@/util/GetProject";
 
-export async function generateStaticParams() {
-  const ids = await GetAllProjectIds();
+// export async function generateStaticParams() {
+//   const projects = await GetAllProjects();
+  
+//   return projects.map(project => ({project: project}));
+// }
 
-  return ids.map(id => ({ project_id: id }));
-}
-
-export default async function ProjectPage({params, asModal}: {params: {project_id: string}, asModal?: boolean}) {
+export default async function ProjectPage({params, asModal}: {params: {project: any, project_id: string}, asModal?: boolean}) {
   const project = await GetProject(params.project_id);
 
   return (
@@ -32,7 +32,7 @@ export default async function ProjectPage({params, asModal}: {params: {project_i
           <div className="pt-16 pb-20">
             <Header project={project} />
             <Hero {...{project, asModal}} />
-            <CustomBody project_id={params.project_id} />
+            <CustomBody project_id={project.id} />
           </div>
         </div>
       </div>

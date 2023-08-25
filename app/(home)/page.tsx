@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import GetAllProjectIds from "@/util/GetAllProjectIds";
-import GetProject from "@/util/GetProject";
+import GetAllProjects from "@/util/GetAllProjects";
 
 export default async function Home() {
   return (
@@ -14,22 +13,22 @@ export default async function Home() {
 }
 
 async function ProjectsShowcase() {
-  const ids = await GetAllProjectIds();
+  const projects = await GetAllProjects();
   
   return (
     <div className="flex w-10/12 flex-wrap overflow-auto custom-scrollbar">
       {
-        ids.map(id => {
-          return <ProjectDisplay key={id} id={id}/>
+        projects.map(project => {
+          return <ProjectDisplay key={project.id} project={project}/>
         })
       }
     </div>
   );
 }
 
-async function ProjectDisplay(props: {id: string}) {
-  const { id } = props;
-  const project = await GetProject(id);
+async function ProjectDisplay(props: {project: any}) {
+  const { project } = props;
+  const { id } = project;
 
   return (
     <div className="w-1/3 shrink-0 p-6">
