@@ -1,6 +1,6 @@
 import GetAllProjectIds from "@/util/GetAllProjectIds";
 import GetProject from "@/util/GetProject";
-import Link from "next/link"
+import Link from "next/link";
 import Image from "next/image";
 import ClientBackBTN from "../../../components/clientBackBtn";
 import IconList from "../../../components/IconList";
