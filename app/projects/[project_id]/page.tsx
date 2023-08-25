@@ -40,22 +40,6 @@ export default async function ProjectPage({params, asModal}: {params: {project: 
   );
 }
 
-function BackButton({asModal}: {asModal: boolean}) {
-  return (
-    <div className="absolute top-4 left-4 z-20 ">
-      {
-        asModal ? (
-          <ClientBackBTN />
-        ) : (
-        <Link className="absolute top-4 left-4" href={'/'}>
-          <Button className="">Back</Button>
-        </Link>
-        )
-      }
-    </div>
-  )
-}
-
 function Header({project} : { project: any}) {
   return (
     <div className="flex items-center">
