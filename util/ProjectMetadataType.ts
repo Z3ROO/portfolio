@@ -6,7 +6,8 @@ export interface ProjectMetadata {
   shortDescription: string
   links: {
     github: string
-    demo: string
+    demo?: string
+    npm?: string
   },
   technologies: string[]
 }

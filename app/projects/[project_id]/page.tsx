@@ -6,6 +6,7 @@ import IconList from "../../../components/IconList";
 import { Button } from "@/components/Button";
 import dynamic from "next/dynamic";
 import GetProject from "@/util/GetProject";
+import { ProjectMetadata } from "@/util/ProjectMetadataType";
 
 export async function generateStaticParams() {
   const projects = await GetProjectsIds();
@@ -40,23 +41,33 @@ export default async function ProjectPage({params, asModal}: {params: {project: 
   );
 }
 
-function Header({project} : { project: any}) {
+function Header({project} : { project: ProjectMetadata}) {
+  const { github, demo, npm } = project.links;
   return (
     <div className="flex items-center">
       <h1 className="font-bold text-5xl px-4 py-8 text-red-300">
         {project.name}
       </h1>
-      <Link href={project.links.github} target="_blank">
+      <Link href={github} target="_blank">
         <Button className="mx-4 ">Github</Button>
       </Link>
-      <Link href={project.links.demo} target="_blank">
-        <Button className="mx-4 ">Demo</Button>
-      </Link>
+      {
+        demo &&
+        <Link href={demo} target="_blank">
+          <Button className="mx-4 ">Demo</Button>
+        </Link>
+      }
+      {
+        npm &&
+        <Link href={npm} target="_blank">
+          <Button className="mx-4 ">npm</Button>
+        </Link>
+      }
     </div>
   )
 }
 
-function Hero({project, asModal}: { project: any, asModal: boolean|undefined}) {
+function Hero({project, asModal}: { project: ProjectMetadata, asModal: boolean|undefined}) {
   return (
       <>
         <div className="w-full p-4 bg-gray-900 relative">
