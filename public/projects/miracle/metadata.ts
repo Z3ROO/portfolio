@@ -1,4 +1,4 @@
-import { ProjectMetadata } from "@/util/ProjectMetadataType";
+import { ProjectMetadata } from "@/types/ProjectMetadataType";
 
 const description = `
 Focused on implement the minimun necessary to build an web app, this project "clones" the main functionality of react featuring hooks like useState, useRef and useEffect, style prop for css styling and class prop to className trasnlation.

@@ -1,4 +1,4 @@
-import { ProjectMetadata } from "@/util/ProjectMetadataType";
+import { ProjectMetadata } from "@/types/ProjectMetadataType";
 
 const description = `
 Designed to be a catalog of projects this portfolio showcase my creations counting with a dedicated page for each project where a technical description of it's functionality and interesting points can be showed. The projects can be sorted and filtered by multiple categories.

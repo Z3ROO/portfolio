@@ -1,4 +1,4 @@
-import { ProjectMetadata } from "@/util/ProjectMetadataType";
+import { ProjectMetadata } from "@/types/ProjectMetadataType";
 
 const description = `
 The Inbox is for depositing everything that comes into mind that is or might be valuable to take action or revisit for later actions.

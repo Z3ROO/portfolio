@@ -1,6 +1,6 @@
 import GetProject from './GetProject';
 import GetProjectsIds from './GetProjectsIds';
-import { ProjectMetadata } from './ProjectMetadataType';
+import { ProjectMetadata } from '../types/ProjectMetadataType';
 
 export default async function GetAllProject(): Promise<ProjectMetadata[]> {  
   const ids = await GetProjectsIds();

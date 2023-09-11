@@ -1,12 +1,11 @@
 import GetProjectsIds from "@/util/GetProjectsIds";
 import Link from "next/link";
 import Image from "next/image";
-import ClientBackBTN from "../../../components/clientBackBtn";
 import IconList from "../../../components/IconList";
 import { Button } from "@/components/Button";
 import dynamic from "next/dynamic";
 import GetProject from "@/util/GetProject";
-import { ProjectMetadata } from "@/util/ProjectMetadataType";
+import { ProjectMetadata } from "@/types/ProjectMetadataType";
 
 export async function generateStaticParams() {
   const projects = await GetProjectsIds();

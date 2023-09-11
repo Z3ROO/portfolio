@@ -1,4 +1,4 @@
-import { ProjectMetadata } from "@/util/ProjectMetadataType";
+import { ProjectMetadata } from "@/types/ProjectMetadataType";
 
 const description = `
 A simple command line tool maker. All that CLIM does is to parse argv parameters and organizing commands, subcommands and flags.

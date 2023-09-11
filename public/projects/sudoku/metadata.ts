@@ -1,4 +1,4 @@
-import { ProjectMetadata } from "@/util/ProjectMetadataType";
+import { ProjectMetadata } from "@/types/ProjectMetadataType";
 
 const description = `
 A fully functional Sudoku game with an in-house board generator for always-valid puzzles. 
