@@ -16,10 +16,11 @@ const inboxMetadata: ProjectMetadata = {
   "id": "miracle",
   "links": {
     "github": "https://github.com/z3roo/miracle",
-    "demo": "miracle-test-app.vercel.app"
+    "demo": "miracle-test-app.vercel.app",
+    "npm": "https://npmjs.com/package/@z3ro/miracle"
   },
   "technologies": [
-    "typescript"
+    "typescript", "nodejs"
   ]
 }
 

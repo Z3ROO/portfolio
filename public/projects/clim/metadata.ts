@@ -14,7 +14,7 @@ const climMetadata: ProjectMetadata = {
   "id": "clim",
   "links": {
     "github": "https://github.com/z3roo/clim",
-    "demo": "https://www.npmjs.com/package/@z3ro/clim"
+    "npm": "https://www.npmjs.com/package/@z3ro/clim"
   },
   "technologies": [
     "typescript", "nodejs"
