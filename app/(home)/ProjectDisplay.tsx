@@ -1,6 +1,7 @@
 import { ProjectMetadata } from "@/types/ProjectMetadataType";
 import Image from "next/image";
 import Link from "next/link";
+import ProjectCardLoading from "./ProjectCardLoading";
 
 export function ProjectDisplay(props: {project: ProjectMetadata}) {
   const { project } = props;
@@ -8,6 +9,7 @@ export function ProjectDisplay(props: {project: ProjectMetadata}) {
 
   return (
     <div className="w-1/3 shrink-0 p-6">
+      <ProjectCardLoading>
       <Link href={`/projects/${id}`}>
         <div className="group h-full p-8 rounded-sm border-red-500 border-opacity-30 bg-gradient-to-bl from-gray-600 to-gray-800 border w-full cursor-pointer hover:scale-[101%] transition-transform">
           <div className="flex flex-col">  
@@ -28,6 +30,7 @@ export function ProjectDisplay(props: {project: ProjectMetadata}) {
           </div>
         </div>
       </Link>
+      </ProjectCardLoading>
     </div>
   );
 }

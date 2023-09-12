@@ -1,13 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 import { ProjectMetadata } from "@/types/ProjectMetadataType";
-import { createContext, ReactNode, useState, useEffect, useContext, SetStateAction } from "react";
+import { createContext, ReactNode, useState, useEffect, useContext, SetStateAction, useRef, Dispatch } from "react";
 
 interface IProjectsContext {
   searchInput: string
   setSearchInput: React.Dispatch<SetStateAction<string>>
   projects: ProjectMetadata[]
   hideStaticProjects: boolean
+  isSomeCardLoading: {current: {deactivate: () => void}|null}
+  setLoadingCard(setter: Dispatch<SetStateAction<boolean>>): void
 }
 
 const Context = createContext<IProjectsContext|null>(null);
@@ -16,6 +18,7 @@ export function SortProjectsContext({children, originalProjects}: { children: Re
   const [searchInput, setSearchInput] = useState('');
   const [projects, setProjects] = useState<ProjectMetadata[]>([]);
   const [hideStaticProjects, setHideStaticProjects] = useState(false);
+  const isSomeCardLoading = useRef<{deactivate: () => void}|null>(null);
 
   useEffect(() => {
     if (searchInput !== '' && !hideStaticProjects)
@@ -38,12 +41,21 @@ export function SortProjectsContext({children, originalProjects}: { children: Re
   }
 
   }, [searchInput])
+
+  function setLoadingCard(setter: Dispatch<SetStateAction<boolean>>) {
+    isSomeCardLoading.current = {deactivate: () => {
+      setter(false);
+      isSomeCardLoading.current = null;
+    }}
+  }
   
   return (
     <Context.Provider value={{
       searchInput, setSearchInput,
       projects,
-      hideStaticProjects
+      hideStaticProjects,
+      isSomeCardLoading,
+      setLoadingCard
     }}>
       {children}
     </Context.Provider>
