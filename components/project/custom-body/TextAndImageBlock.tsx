@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Text from './Text';
 
 export default function TextImageBlock(props: {children: string|string[], img: string, alt?: string, reverse?: boolean}) {
   const { children, img, alt, reverse } = props;
@@ -10,24 +11,3 @@ export default function TextImageBlock(props: {children: string|string[], img: s
   )
 }
 
-function Text(props: {text: string|string[]}) {
-  let { text } = props;
-
-  if (!Array.isArray(text))
-    text = [text];
-
-  return (
-    <div className="p-4">
-      {
-        text.map(t => {
-          return (
-            <p 
-              key={t}
-              className={`py-4 text-xl`}
-            >{t}</p>
-          )
-        })
-      } 
-    </div>
-  )
-}
