@@ -1,12 +1,12 @@
 'use client'
 import CodeBlock from '@/components/CodeBlock';
-import Section from '@/components/project/custom-body/Section';
+import {SectionH2} from '@/components/project/custom-body/Section';
 import { TextAndCodeBlock } from '@/components/project/custom-body/TextAndCodeBlock';
 
 export default function CLIMCustomBody() {
   return (
     <div>
-      <Section title='Package usage'>
+      <SectionH2 title='Package usage'>
         <TextAndCodeBlock>
           {[`
   import CliMaker, { ICommand } from '@z3ro/clim';
@@ -91,7 +91,7 @@ new CliMaker(command, { bindThis: true })
             ]
           ]}
         </TextAndCodeBlock>
-      </Section>
+      </SectionH2>
     </div>
   )
 }

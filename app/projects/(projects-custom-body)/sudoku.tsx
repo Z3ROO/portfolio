@@ -1,18 +1,18 @@
-import Section from "@/components/project/custom-body/Section";
+import { SectionH2 } from "@/components/project/custom-body/Section";
 import TextAndImageBlock from "@/components/project/custom-body/TextAndImageBlock";
 
 export default function CustomBody() {
   return (
     <div>
-      <Section title={'Interactivity'}>
+      <SectionH2 title={'Interactivity'}>
         <TextAndImageBlock img="/projects/sudoku/assets/completion-animation.gif" alt="completion-animation">
           {[
             "Cel animations shows when a row, column or box is correctly completed always parting from the last cel filled.",
             "When multiple sections gets completed at the same time they get sinchronized as one."
           ]}
         </TextAndImageBlock>
-      </Section>
-      <Section title="Board generator">
+      </SectionH2>
+      <SectionH2 title="Board generator">
         <p className="py-2 text-xl text-justify">The whole algorithm is based on parallel swaps, each sell is randomly pre-filled from 1 to 9 with the only constraint being that all the cels in each box must have an unique number from 1 through 9 per box. </p>
         <TextAndImageBlock reverse img="/projects/sudoku/assets/algo-hori.jpg">
           {[
@@ -28,7 +28,7 @@ export default function CustomBody() {
             "And also the third, sixth and nineth rows and columns are alwais sorted by previews two."
           ]}
         </TextAndImageBlock>
-      </Section>
+      </SectionH2>
     </div>
   )
 }
