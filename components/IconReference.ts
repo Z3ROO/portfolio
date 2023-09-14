@@ -4,6 +4,9 @@ import { FaReact } from 'react-icons/fa';
 import { GrTechnology } from 'react-icons/gr';
 import { IconType } from 'react-icons';
 import { SiStyledcomponents, SiNextdotjs, SiReactquery, SiJest, SiExpress } from 'react-icons/si';
+import { CgBrowser } from 'react-icons/cg';
+import { BsGithub } from 'react-icons/bs';
+import { DiNpm } from 'react-icons/di';
 
 const IconReference: { [key: string]: IconType } = {
   'typescript': BiLogoTypescript,
@@ -16,7 +19,10 @@ const IconReference: { [key: string]: IconType } = {
   'mongodb': BiLogoMongodb,
   'nextjs': SiNextdotjs,
   'jest': SiJest,
-  'no-icon': GrTechnology
+  'no-icon': GrTechnology,
+  'browser': CgBrowser,
+  'github': BsGithub,
+  'npm': DiNpm
 }
 
 export default IconReference
