@@ -6,6 +6,7 @@ import { Button } from "@/components/Button";
 import dynamic from "next/dynamic";
 import GetProject from "@/util/GetProject";
 import { ProjectMetadata } from "@/types/ProjectMetadataType";
+import { IconButton } from '@/components/IconButton';
 
 export async function generateStaticParams() {
   const projects = await GetProjectsIds();
@@ -42,25 +43,20 @@ export default async function ProjectPage({params, asModal}: {params: {project: 
 
 function Header({project} : { project: ProjectMetadata}) {
   const { github, demo, npm } = project.links;
+  
   return (
     <div className="flex items-center">
-      <h1 className="font-bold text-5xl px-4 py-8 text-red-300">
+      <h1 className="font-bold text-5xl px-4 py-8 mr-12 text-red-300">
         {project.name}
       </h1>
-      <Link href={github} target="_blank">
-        <Button className="mx-4 ">Github</Button>
-      </Link>
+        <IconButton href={github} target="_blank" icon='github' className="mx-2">Github</IconButton>
       {
         demo &&
-        <Link href={demo} target="_blank">
-          <Button className="mx-4 ">Demo</Button>
-        </Link>
+        <IconButton href={demo} target="_blank" icon='browser' className="mx-2">Demo</IconButton>
       }
       {
         npm &&
-        <Link href={npm} target="_blank">
-          <Button className="mx-4 ">npm</Button>
-        </Link>
+        <IconButton href={npm} target="_blank" icon='npm' className="mx-2"></IconButton>
       }
     </div>
   )
