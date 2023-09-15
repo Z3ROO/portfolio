@@ -2,6 +2,7 @@
 
 import { useProjectsContext } from "./ProjectsContext";
 import { RiCloseLine } from "react-icons/ri";
+import { AiOutlineSearch } from "react-icons/ai";
 
 export function SortingSection() {
   const projectsContext = useProjectsContext();
@@ -12,7 +13,8 @@ export function SortingSection() {
   const {searchInput, setSearchInput} = projectsContext;
 
   return (
-    <div className="flex w-10/12 justify-end px-4 py-2">
+    <div className="flex w-10/12 justify-end items-center px-4 py-2">
+      <AiOutlineSearch className="text-red-800 w-5 h-5 mr-2 opacity-60" />
       <div className="relative group">
         <input 
           className="w-72 h-8 px-2 py-1 rounded-sm shadow-inner shadow-[#0000002f] border border-opacity-30 group-hover:border-opacity-50 focus:border-opacity-75 outline-none border-red-500 bg-gray-800 focus:bg-gray-700 transition-all" 
