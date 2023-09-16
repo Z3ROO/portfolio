@@ -6,7 +6,7 @@ import { RiCloseLine } from "react-icons/ri";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useEffect, useRef, useState } from "react";
 
-export function SortingSection() {
+export default function SearchBar() {
   const projectsContext = useProjectsContext();
   const [toolTip, setToolTip] = useState(false);
 
@@ -16,7 +16,7 @@ export function SortingSection() {
   const {searchInput, setSearchInput} = projectsContext;
 
   return (
-    <div className="flex w-10/12 justify-end items-center px-4 py-2">
+    <div className="flex justify-end items-center px-4 py-2 absolute bottom-3 right-44">
       <AiOutlineSearch className="text-red-800 w-5 h-5 mr-2 opacity-60" />
       <div className="relative group">
         <input 

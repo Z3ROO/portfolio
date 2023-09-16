@@ -1,15 +1,18 @@
+import GetAllProjects from "@/util/GetAllProjects";
 import { ReactNode } from "react";
+import { SortProjectsContext } from "./ProjectsContext";
+import Header from "./Header";
 
-export default function HomeLayout({children}: {children: ReactNode}) {
+export default async function HomeLayout({children}: {children: ReactNode}) {
+  const projects = await GetAllProjects();
+
   return (
     <div className='h-screen w-screen'>
-      <div className='pt-8 pl-8 pb-4 w-min select-none h-28'>
-        <h2 className='text-5xl font-bold whitespace-nowrap'>Pedro Ribeiro</h2>
-        <h4 className='text-xl text-end text-red-300'>FullStack Developer</h4>
-      </div>
-      <div className='w-full'>
-        {children}
-      </div>
+      <SortProjectsContext originalProjects={projects}>
+        <Header>
+          {children}
+        </Header>
+      </SortProjectsContext>
     </div>
   )
 }
