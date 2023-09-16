@@ -18,7 +18,7 @@ export default async function Home() {
 async function ProjectsShowcase({projects}: { projects: ProjectMetadata[]}) {
   
   return (
-    <div className="flex w-10/12 flex-wrap">
+    <div className="flex w-10/12 flex-wrap pb-24">
       <HideStaticProjects>
         {
           projects.map(project => {
