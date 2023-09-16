@@ -27,7 +27,7 @@ export default function ProjectCardLoading({ children }: { children: ReactNode }
       }}>
       {
         isLoading && (
-        <div className="absolute top-0 left-0 w-full h-full bg-gray-800 bg-opacity-90 z-10 flex justify-center items-center">
+        <div className="absolute top-0 left-0 w-full h-full bg-gray-800 bg-opacity-90 z-[1] flex justify-center items-center">
           <LoadingSpinner />
         </div>
         )
