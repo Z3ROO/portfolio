@@ -1,7 +1,16 @@
-export async function LastCommitTag() {
-  const githubRequest = await fetch('https://api.github.com/repos/z3roo/portfolio/activity?per_page=1');
-  const RepoLastActivity = await githubRequest.json();
-  const lastPushDate = new Date(RepoLastActivity[0].timestamp);
+export async function LastCommitTag({repository_name}: {repository_name: string}) {
+  console.log(repository_name)
+
+  let RepoLastActivity: any;
+  try {
+    const githubRequest = await fetch(`https://api.github.com/repos/z3roo/${repository_name}/activity?per_page=1`);
+    RepoLastActivity = await githubRequest.json();
+  }
+  catch (err) {
+    RepoLastActivity = [{timestamp: 0}]
+  }
+
+  const lastPushDate = RepoLastActivity[0].timestamp;
 
   const timePassed = CalculateTimePassed(lastPushDate);
 
@@ -11,6 +20,9 @@ export async function LastCommitTag() {
       <span>
         {
           Object.keys(timePassed).reduce((acc, val) => {
+            if (timePassed.fetch_failed)
+              return 'Failed to reach Github API'
+
             if (timePassed[val] != null)
               return `${timePassed[val]} ${val} ago`
 
@@ -22,10 +34,16 @@ export async function LastCommitTag() {
   )
 }
 
-function CalculateTimePassed(lastPushDate: Date): {[key: string]: number|null} {
+function CalculateTimePassed(lastPushDate: number): {[key: string]: number|null} {
+  if (lastPushDate === 0)
+    return {
+      fetch_failed: 1
+    }
+
+  const lastPush = new Date(lastPushDate);
   const now = new Date();
 
-  const difference:number = now.getTime() - lastPushDate.getTime();
+  const difference:number = now.getTime() - lastPush.getTime();
   
   const minutes = Math.floor(difference / 1000 / 60);
   const hours =  Math.floor(minutes / 60);
