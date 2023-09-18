@@ -7,10 +7,17 @@ import dynamic from "next/dynamic";
 import GetProject from "@/util/GetProject";
 import { ProjectMetadata } from "@/types/ProjectMetadataType";
 import { IconButton } from '@/components/IconButton';
+import { LastCommitTag } from "@/components/project/LastCommitTag";
 
 export async function generateStaticParams() {
   const projects = await GetProjectsIds();
   //IS THIS REALLY WORKING
+  // NO ITS NOT WORKING!!!
+
+  // MUST FIX THIS!!!!!!
+
+  // ############################################
+  // ######################################
   return projects.map(project_id => ({project_id}));
 }
 
@@ -63,10 +70,12 @@ function Header({project} : { project: ProjectMetadata}) {
 }
 
 function Hero({project, asModal}: { project: ProjectMetadata, asModal: boolean|undefined}) {
+
   return (
       <>
         <div className="w-full p-4 bg-gray-900 relative">
           <div className="relative z-10">
+            <LastCommitTag />
             <Image src={`/projects/${project.id}/hero.jpg`} width={1080}  height={675} alt="hero"/>
             <div className="flex flex-wrap content-start p-4">
               <IconList technologies={project.technologies} />
