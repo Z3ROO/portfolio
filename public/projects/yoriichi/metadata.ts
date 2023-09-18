@@ -13,7 +13,7 @@ const inboxMetadata: ProjectMetadata = {
   priority: 2,
   "shortDescription": "Inspired by GTD inbox, this is a personal product for organizing ideas and goals.",
   description,
-  "id": "inbox",
+  "id": "yoriichi",
   "links": {
     "github": "https://github.com/z3roo/yoriichi",
     "demo": ""
