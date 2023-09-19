@@ -1,61 +1,61 @@
 export async function LastCommitTag({repository_name}: {repository_name: string}) {
-  console.log(repository_name)
-
-  let RepoLastActivity: any;
+  let repoLastActivity: any;
   try {
     const githubRequest = await fetch(`https://api.github.com/repos/z3roo/${repository_name}/activity?per_page=1`);
-    RepoLastActivity = await githubRequest.json();
+    repoLastActivity = await githubRequest.json();
+    
+    if (Array.isArray(repoLastActivity))
+      repoLastActivity = repoLastActivity[0];
+    else
+      throw new Error();
   }
   catch (err) {
-    RepoLastActivity = [{timestamp: 0}]
+    repoLastActivity = {timestamp: 0}
   }
 
-  const lastPushDate = (RepoLastActivity||[])[0]?.timestamp || 0;
-
-  const timePassed = CalculateTimePassed(lastPushDate);
+  const timePassed = CalculateTimePassed(repoLastActivity);
 
   return (
     <div>
       <span className="text-red-400">Last update: </span>
-      <span>
-        {
-          Object.keys(timePassed).reduce((acc, val) => {
-            if (timePassed.fetch_failed)
-              return 'Failed to reach Github API'
-
-            if (timePassed[val] != null)
-              return `${timePassed[val]} ${val} ago`
-
-            return acc;
-          }, '')
-        }
-      </span>
+      <span>{timePassed}</span>
     </div>
   )
 }
 
-function CalculateTimePassed(lastPushDate: number): {[key: string]: number|null} {
-  if (lastPushDate === 0)
-    return {
-      fetch_failed: 1
-    }
+function CalculateTimePassed(repoLastActivity: any): string {
+  if (
+    !repoLastActivity ||
+    !repoLastActivity.timestamp ||
+    repoLastActivity.timestamp === 0
+    )
+    return 'Failed to reach Github API'
 
-  const lastPush = new Date(lastPushDate);
+  const lastPush = new Date(repoLastActivity.timestamp);
   const now = new Date();
 
   const difference:number = now.getTime() - lastPush.getTime();
   
-  const minutes = Math.floor(difference / 1000 / 60);
-  const hours =  Math.floor(minutes / 60);
-  const days = Math.floor(hours / 24);
-  const weeks = Math.floor(days / 7);
-  const months = Math.floor(days / 30);
+  const minutes = Math.floor(difference / 1000 / 60),
+        hours =  Math.floor(minutes / 60),
+        days = Math.floor(hours / 24),
+        weeks = Math.floor(days / 7),
+        months = Math.floor(days / 30);
 
-  return {
-    minutes: minutes > 1 ? minutes : 2,
-    hours: hours > 1 ? hours : null,
-    days: days > 1 ? days : null,
-    weeks: weeks > 1 ? weeks : null,
-    months: months > 1 ? months : null
+  const validations:{[key: string]: null|string} = {
+    months: months > 1 ? `${months} months ago` : null,
+    weeks: weeks > 1 ? `${weeks} weeks ago` : null,
+    days: days > 1 ? `${days} days ago` : null,
+    hours: hours > 1 ? `${hours} hours ago` : null,
+    minutes: minutes > 1 ? `${minutes} minutes ago` : 'now'
   }
+
+  for (const validation in validations) {
+    const v = validations[validation];
+
+    if (typeof v === 'string')
+      return v;
+  }
+  
+  return 'Failed to calculate time passed'
 }
