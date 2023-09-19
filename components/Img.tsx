@@ -5,6 +5,7 @@ interface ImgProps {
   width: number
   height: number
   alt: string
+  quality?: number
   className?: string
   wClassName?: string
 }
