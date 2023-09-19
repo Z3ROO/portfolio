@@ -10,7 +10,7 @@ export async function LastCommitTag({repository_name}: {repository_name: string}
     RepoLastActivity = [{timestamp: 0}]
   }
 
-  const lastPushDate = RepoLastActivity[0].timestamp;
+  const lastPushDate = (RepoLastActivity||[])[0]?.timestamp || 0;
 
   const timePassed = CalculateTimePassed(lastPushDate);
 
