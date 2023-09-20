@@ -15,8 +15,7 @@ const inboxMetadata: ProjectMetadata = {
   description,
   "id": "inbox",
   "links": {
-    "github": "https://github.com/z3roo/inbox",
-    "demo": ""
+    "github": "https://github.com/z3roo/inbox"
   },
   "technologies": [
     "typescript", "reactjs", "react-query", "tailwindcss", "nodejs", "expressjs", "mongodb", "jest"
