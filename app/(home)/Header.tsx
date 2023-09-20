@@ -17,38 +17,52 @@ export default function Header({ children }: {children: ReactNode}) {
         }}
       >
         <div className="h-40">
-        <div 
-          id="main-header"
-          className='select-none z-10 flex flex-col relative w-[calc(100%-0.5rem)] bg-gray-900 bg-opacity-90 transition-all'
-          style={{
-            paddingTop: slimHeader ? '1rem' : '2rem',
-            paddingLeft: slimHeader ? '2rem' : '2rem',
-            position: slimHeader ? 'fixed' : undefined,
-            height: slimHeader ? '4rem' : '10rem',
-            backdropFilter: slimHeader ? 'blur(4px)' : 'none'
-          }}
-        >
           <div 
-            className="w-min">
-            <h2 
-              className='text-5xl font-bold whitespace-nowrap mr-4  transition-all'
+            className="h-40  w-[calc(100%-0.5rem)] bg-gray-900 bg-opacity-90 flex justify-center z-10"
+            style={{
+              position: slimHeader ? 'fixed' : undefined,
+              backdropFilter: slimHeader ? 'blur(4px)' : 'none',
+              height: slimHeader ? '4rem' : '10rem'
+            }}
+          >
+            <div
+              className='select-none w-full pl-4 max-w-6xl flex flex-col relative transition-all justify-between'
               style={{
-                fontSize: slimHeader ? '2rem' : '3rem',
-                display: slimHeader ? 'inline' : 'block'
+                flexDirection: slimHeader ? 'row' : 'column'
               }}
-              >Pedro Ribeiro</h2>
-            <h4 
-              className='text-xl text-end text-red-300 whitespace-nowrap transition-all'
-              style={{
-                fontSize: slimHeader ? '1rem' : '1.25rem',
-                display: slimHeader ? 'inline' : 'block'
-              }}
-            >FullStack Developer</h4>
+            >
+              <Logo slimHeader={slimHeader} />
+              <SearchBar />
+            </div>
           </div>
-          <SearchBar />
-        </div>
         </div>
         {children}        
       </div>
+  )
+}
+
+function Logo({ slimHeader }: {slimHeader: boolean}) {
+  return (
+    <div 
+      className="w-min"
+      style={{
+        paddingTop: slimHeader ? '1rem' : '2rem',
+      }}
+    >
+      <h2 
+        className='text-5xl font-bold whitespace-nowrap mr-4  transition-all'
+        style={{
+          fontSize: slimHeader ? '2rem' : '3rem',
+          display: slimHeader ? 'inline' : 'block'
+        }}
+        >Pedro Ribeiro</h2>
+      <h4 
+        className='text-xl text-end text-red-300 whitespace-nowrap transition-all'
+        style={{
+          fontSize: slimHeader ? '1rem' : '1.25rem',
+          display: slimHeader ? 'inline' : 'block'
+        }}
+      >FullStack Developer</h4>
+    </div>
   )
 }
