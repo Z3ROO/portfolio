@@ -76,7 +76,7 @@ function Hero({project, asModal}: { project: ProjectMetadata, asModal: boolean|u
         <div className="w-full p-4 bg-gray-900 relative">
           <div className="relative z-10">
             <LastCommitTag repository_name={project.id} />
-            <Image src={`/projects/${project.id}/hero.jpg`} width={1080}  height={675} quality={100} alt="hero"/>
+            <Image src={`/projects/${project.id}/hero.jpg`} width={1080}  height={675} alt="hero"/>
             <div className="flex flex-wrap content-start p-4">
               <IconList technologies={project.technologies} />
             </div>
