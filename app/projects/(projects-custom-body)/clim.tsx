@@ -1,5 +1,4 @@
 'use client'
-import CodeBlock from '@/components/CodeBlock';
 import {SectionH2} from '@/components/project/custom-body/Section';
 import { TextAndCodeBlock } from '@/components/project/custom-body/TextAndCodeBlock';
 
@@ -7,14 +6,14 @@ export default function CLIMCustomBody() {
   return (
     <div>
       <SectionH2 title='Package usage'>
-        <TextAndCodeBlock>
+        <TextAndCodeBlock syntax='ts'>
           {[`
   import CliMaker, { ICommand } from '@z3ro/clim';
               `.trim(),
             "After installing the package through npm or yarn just import it inside your js/ts file."
           ]}
         </TextAndCodeBlock>
-        <TextAndCodeBlock>
+        <TextAndCodeBlock syntax='ts'>
           {[`
 const command: ICommand = {
     name: 'Command name',
@@ -49,7 +48,7 @@ const command: ICommand = {
             ]
           ]}
         </TextAndCodeBlock>
-        <TextAndCodeBlock>
+        <TextAndCodeBlock syntax='ts'>
           {[`
 const subCommand: ICommand = {
   name: 'subCommand',
@@ -68,7 +67,7 @@ const mainCommand: ICommand = {
             ]
           ]}
         </TextAndCodeBlock>
-        <TextAndCodeBlock>
+        <TextAndCodeBlock syntax='ts'>
           {[`
 function toolMethod(options: any) {
     const {
