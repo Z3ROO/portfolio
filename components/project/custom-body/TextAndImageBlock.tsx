@@ -6,7 +6,7 @@ export default function TextImageBlock(props: {children: string|string[], img: s
   return (
     <div className={`flex py-4 ${reverse && 'flex-row-reverse'}`}>
       <Img  className='p-4' src={img} width={500} height={500} alt={alt || ''}/>
-      <Text text={children} />
+      <Text>{children}</Text>
     </div>
   )
 }
