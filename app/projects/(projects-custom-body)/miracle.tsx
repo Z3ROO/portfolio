@@ -10,15 +10,24 @@ export default function MiracleCustomPage() {
         {
           [
             `npm create miracle`, [
-            'Just run the command `npm create miracle` and after that you\'ll be prompted to choose a name for the project.',
-            'After choosing the name a folder will be created for with the name you chose containing the necessary files.'
+            'Just run the command `npm create miracle` and you\'ll be prompted to choose a name for your project.',
+            'A folder with the chosen name will be created in current directory containing the necessary files.'
+            ]
+          ]
+        }
+        </TextAndCodeBlock>
+        <TextAndCodeBlock syntax="command">
+        {
+          [
+            `npm install`, [
+            'Run `npm install` to install all the necessary dependencies.'
             ]
           ]
         }
         </TextAndCodeBlock>
       </SectionH2>
       <Text>{[
-        'After creating your project, you can include all your application inside the src folder.',
+        'After creating your project and installing the dependencies, you can start creating your app inside the src folder.',
         'The file index.tsx is the root of the project, when the build command is triggered Miracle will look for this file to start bundling.'
       ]}</Text>
       <SectionH2 title="Development mode">

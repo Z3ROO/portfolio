@@ -1,17 +1,17 @@
 import { ProjectMetadata } from "@/types/ProjectMetadataType";
 
 const description = `
-Focused on implement the minimun necessary to build an web app, this project "clones" the main functionality of react featuring hooks like useState, useRef and useEffect, style prop for css styling and class prop to className trasnlation.
+Focused on implement the minimum necessary to build a web app, this project "clones" the main functionality of react, featuring hooks like useState, useRef and useEffect, style prop for css styling and translating class attribute to className.
 
-Typingin the whole project would be unnecessary since this is an intended naive implementation hence only hooks are typed.
+The current functionality makes possible to build an extensive web application and you'll find a classic todo-list as demonstration at the top.
 
-The current functionality makes possible to build an extensive web application if not considering the performance issues and you'll find a demo app at the top of this page.
+Along with the template engine, the project includes all the necessary project creation and build tools commonly accompanying such frameworks/libraries.
 `.trim();
 
 const inboxMetadata: ProjectMetadata = {
   "name": "Miracle",
   priority: 0,
-  "shortDescription": "A clone of React.js engine featuring function components, hooks, etc.",
+  "shortDescription": "A Javascript template engine just like React including project and build tools",
   description,
   "id": "miracle",
   "links": {
