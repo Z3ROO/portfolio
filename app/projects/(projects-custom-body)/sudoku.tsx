@@ -1,5 +1,6 @@
 import { SectionH2 } from "@/components/project/custom-body/Section";
 import TextAndImageBlock from "@/components/project/custom-body/TextAndImageBlock";
+import Text from "@/components/project/custom-body/Text";
 
 export default function CustomBody() {
   return (
@@ -13,19 +14,23 @@ export default function CustomBody() {
         </TextAndImageBlock>
       </SectionH2>
       <SectionH2 title="Board generator">
-        <p className="py-2 text-xl text-justify">The whole algorithm is based on parallel swaps, each sell is randomly pre-filled from 1 to 9 with the only constraint being that all the cels in each box must have an unique number from 1 through 9 per box. </p>
+        <Text>{[
+          'The whole algorithm is based on parallel swaps.',
+          'To start, each cel is randomly pre-filled with a unique number from 1 to 9 per box. At this point, from a box perspective, the board is correctly sorted.',
+          ' Now, we need to sort rows and columns.'
+        ]}</Text>
         <TextAndImageBlock reverse img="/projects/sudoku/assets/algo-hori.jpg">
           {[
-            "The swaps happens switching from row to column back and forth going through each cel and if the current row have repeated numbers it tries to swap with one of the parallel cel.",
-            "If the if both of the parallel cels is already in the row, then one of the two (or one) is randomly chosen.",
-            "After the swap the algorithm jumps the other repeating number and tries the same thing until the row have only unique numbers from 1 to 9."
+            "The swaps happens switching from row to column back and forth going through each cel. If the current row have repeated numbers it tries to swap with one of the parallel cels.",
+            "If both of the parallel cels is already in the row, then one of the two (or one) is randomly chosen.",
+            "After the swap, the algorithm jumps to the other repeating number and tries the same process until the row has only unique numbers from 1 to 9."
           ]}
         </TextAndImageBlock>
         <TextAndImageBlock img="/projects/sudoku/assets/algo-vert.jpg">
           {[
-            "Once a row is completed it goes to a column applying the same concept.",
-            "Since the swaps only happens in parallel and alwais from top left to bottom right, when sorting a column does not unsort a row and vice versa.",
-            "And also the third, sixth and nineth rows and columns are alwais sorted by previews two."
+            "Once a row is completed, it goes to a column applying the same concept.",
+            "Since the swaps only happens in parallel and always from top left to bottom right, when sorting a column does not unsort a row and vice versa.",
+            "Also the third, sixth, and ninth rows and columns are always sorted by consequence."
           ]}
         </TextAndImageBlock>
       </SectionH2>
