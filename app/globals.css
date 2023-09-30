@@ -77,3 +77,19 @@ body {
 *, .font-heebo {
   font-family: 'Heebo', sans-serif;
 }
+
+.noise {
+  overflow: hidden;
+}
+
+.noise::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/noise.png'); /* Replace with your noise texture */
+  background-size: contain;
+  opacity: 0.1; /* Adjust the opacity to control the intensity of the noise effect */
+}

@@ -14,11 +14,14 @@ export default function Hero() {
   const { containerMarginSize } = layoutContext;
 
   return (
-    <div className="h-screen flex justify-center items-center">
-      <div className="flex flex-row mb-24">
-        <NameAndTitle containerMarginSize={containerMarginSize} />
-        <SocialIcons containerMarginSize={containerMarginSize} />      
-      </div>
+    <div className="h-screen flex justify-center items-center relative">
+
+        <div className="flex flex-row mb-24">
+          <NameAndTitle containerMarginSize={containerMarginSize} />
+          <SocialIcons containerMarginSize={containerMarginSize} />      
+        </div>
+        
+
     </div>
   )
 }
@@ -33,7 +36,7 @@ function NameAndTitle({ containerMarginSize }:{containerMarginSize: number}) {
   const titleRef = useRef<HTMLParagraphElement>(null);
   const titleDivRef = useRef<HTMLDivElement>(null);
 
-  const pedroInterObs = useIntersectionObserver(h1DivNameRef, { threshold: 1 , rootMargin: '-96px 0px 0px 0px', above: 96 });
+  const nameInterObs = useIntersectionObserver(h1DivNameRef, { threshold: 1 , rootMargin: '-96px 0px 0px 0px', above: 96 });
   const surnameInterObs = useIntersectionObserver(h1DivSurnameRef, { threshold: 1 , rootMargin: '-96px 0px 0px 0px', above: 96 });
   const titleInterObs = useIntersectionObserver(titleDivRef, { threshold: 1 , rootMargin: '-96px 0px 0px 0px', above: 96 });
 
@@ -42,9 +45,9 @@ function NameAndTitle({ containerMarginSize }:{containerMarginSize: number}) {
       return;
     
     const h1 = h1NameRef.current!;
-    AnimateName(h1, pedroInterObs, containerMarginSize)
+    AnimateName(h1, nameInterObs, containerMarginSize)
     
-  },[h1NameRef.current, pedroInterObs, containerMarginSize]);
+  },[h1NameRef.current, nameInterObs, containerMarginSize]);
 
   useEffect(() => {
     if (!h1SurnameRef.current || !containerMarginSize)
@@ -65,19 +68,33 @@ function NameAndTitle({ containerMarginSize }:{containerMarginSize: number}) {
   }, [titleRef.current, titleInterObs]);
 
   return (
-    <div>
-      <div className="h-36"  ref={h1DivNameRef}>
+    <div className="relative">
+      <div className="h-36 relative z-10"  ref={h1DivNameRef}>
         <h1 className="font-bold text-9xl transition-all duration-300" ref={h1NameRef}>Pedro </h1>
         <span className="invisible">.</span>
       </div>
-      <div className="h-36 " ref={h1DivSurnameRef}>
+      <div className="h-36 relative z-10" ref={h1DivSurnameRef}>
         <h1 className="font-bold text-9xl transition-all duration-300" ref={h1SurnameRef}>Ribeiro</h1>
         <span className="invisible">.</span>
       </div>
-      <div ref={titleDivRef} className="h-12">
+      <div ref={titleDivRef} className="h-12 relative z-10">
         <p ref={titleRef} className="transition-all duration-300 text-2xl">A software engineer specialized in web technologies.</p>
         <span className="invisible">.</span>
       </div>
+      <div 
+          style={{
+            background: 'radial-gradient(circle, rgba(248, 113, 113, 0.055) 11%, rgba(248, 113, 113, 0) 66%)',
+            opacity: nameInterObs !== 'above' ? '1' : '0'
+          }} 
+          className="noise absolute top-0 right-full -translate-y-1/3 translate-x-1/2 w-[750px] h-[750px] rounded-full transition-opacity duration-500" 
+        />
+        <div 
+          style={{
+            background: 'radial-gradient(circle, rgba(248, 113, 113, 0.075) 11%, rgba(248, 113, 113, 0) 66%)',
+            opacity: surnameInterObs !== 'above' ? '1' : '0'
+          }} 
+          className="noise absolute top-0 right-0 -translate-y-1/4 translate-x-1/3 w-[900px] h-[900px] rounded-full transition-opacity duration-500" 
+        />
     </div>
   )
 }
@@ -110,7 +127,7 @@ function SocialIcons({ containerMarginSize }:{containerMarginSize: number}) {
   },[linkedinRef.current, linkedinInterObs, containerMarginSize]);
 
   return (
-    <div className="pl-28">
+    <div className="pl-28 relative z-10">
       <div className="h-9 my-12" ref={githubDivRef}>
         <div className="text-4xl text-red-400 transition-all duration-300" ref={githubRef}>
           <BsGithub/>

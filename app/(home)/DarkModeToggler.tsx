@@ -11,7 +11,7 @@ export default function DarkModeToggler() {
   const { containerMarginSize } = layoutContext;
 
   return (
-    <div className="fixed top-4 text-xl cursor-pointer transition-opacity duration-500" style={{
+    <div className="fixed top-4 text-xl cursor-pointer transition-opacity duration-500 z-10" style={{
       right: `${containerMarginSize + 48}px`,
       opacity: containerMarginSize === 0 ? '0' : '1'
     }}>

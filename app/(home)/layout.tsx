@@ -23,10 +23,16 @@ export default function Layout({children}: {children: ReactNode}) {
 function NavbarBody() {
   const LayoutContext = useLayout();
 
-  if (!LayoutContext || !LayoutContext.scrolled)
+  if (!LayoutContext)
     return null
 
   return (
-    <div className="h-14 w-full bg-white bg-opacity-25 fixed left-0"></div>
+    <div 
+      className="h-14 w-full bg-gray-550 bg-opacity-50 fixed left-0 z-10 transition-transform duration-500"
+      style={{
+        backdropFilter: 'blur(4px)',
+        transform: LayoutContext.scrolled ? 'none' : 'translateY(-100%)'
+      }}
+    ></div>
   )
 }
