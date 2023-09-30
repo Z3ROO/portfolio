@@ -68,7 +68,7 @@ function NameAndTitle({ containerMarginSize }:{containerMarginSize: number}) {
   }, [titleRef.current, titleInterObs]);
 
   return (
-    <div className="relative">
+    <div className="relative select-none">
       <div className="h-36 relative z-10"  ref={h1DivNameRef}>
         <h1 className="font-bold text-9xl transition-all duration-300" ref={h1NameRef}>Pedro </h1>
         <span className="invisible">.</span>
@@ -129,14 +129,14 @@ function SocialIcons({ containerMarginSize }:{containerMarginSize: number}) {
   return (
     <div className="pl-28 relative z-10">
       <div className="h-9 my-12" ref={githubDivRef}>
-        <div className="text-4xl text-red-400 transition-all duration-300" ref={githubRef}>
-          <BsGithub/>
+        <div className="text-4xl text-red-400 cursor-pointer transition-all duration-300" ref={githubRef}>
+          <a href="https://www.github.com/z3roo" target="_blank"><BsGithub/></a>
         </div>
         <span className="invisible">.</span>
       </div>
       <div className="h-9 my-12" ref={linkedinDivRef}>
-        <div className="text-4xl text-red-400 transition-all duration-300" ref={linkedinRef}>
-          <BsLinkedin />
+        <div className="text-4xl text-red-400 cursor-pointer transition-all duration-300" ref={linkedinRef}>
+          <a href="https://www.linkedin.com/in/pedro-ribeiro-aa598318a" target="_blank"><BsLinkedin /></a>
         </div>
         <span className="invisible">.</span>
       </div>

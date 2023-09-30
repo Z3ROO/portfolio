@@ -44,8 +44,7 @@ export function LayoutContextProvider({children}: {children: ReactNode}) {
 
         }}
 
-        className="overflow-auto h-screen w-screen"
-        
+        className="overflow-auto h-screen w-screen flex justify-center custom-scrollbar"
       >
         <div className="max-w-7xl relative w-full" ref={containerRef}>
           {children}

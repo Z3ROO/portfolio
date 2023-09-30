@@ -9,7 +9,7 @@ import SearchBar from "./SearchBar";
 export default async function Home() {
 
   return (
-    <main className="flex flex-col items-center">
+    <main className="">
       <ProjectsShowcase />
     </main>
   )
@@ -21,8 +21,8 @@ async function ProjectsShowcase() {
   return (
     <SortProjectsContext originalProjects={projects}>
       <SearchBar />
-      <div className="flex pb-24 max-w-6xl justify-center">
-        <div className="flex flex-wrap">
+      <div className="pb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
           <HideStaticProjects>
             {
               projects.map(project => {

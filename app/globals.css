@@ -93,3 +93,8 @@ body {
   background-size: contain;
   opacity: 0.1; /* Adjust the opacity to control the intensity of the noise effect */
 }
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  
+}

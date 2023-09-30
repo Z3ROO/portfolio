@@ -8,7 +8,7 @@ export function ProjectDisplay(props: {project: ProjectMetadata}) {
   const { id } = project;
 
   return (
-    <div className="w-full max-w-sm shrink-0 p-6">
+    <div className="w-full max-w-md p-6 mx-auto">
       <ProjectCardLoading>
         <Link href={`/projects/${id}`}>
           <div className="group h-full p-8 rounded-sm border-red-500 border-opacity-30 bg-gradient-to-bl from-gray-600 to-gray-800 border w-full cursor-pointer hover:scale-[101%] transition-transform">
