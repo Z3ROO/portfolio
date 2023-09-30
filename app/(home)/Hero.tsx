@@ -3,7 +3,7 @@ import { useRef, useEffect } from "react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { useLayout } from "./LayoutContext";
 import { AnimateName, AnimateSurname, AnimateTitle, AnimateGithubIcon, AnimateLinkedinIcon } from "./animations/hero";
-import useIntersectionObserver from "./useIntersectionObserver";
+import useIntersectionObserver from "../../util/useIntersectionObserver";
 
 export default function Hero() {
   const layoutContext = useLayout();

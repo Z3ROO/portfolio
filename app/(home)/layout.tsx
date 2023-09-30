@@ -1,18 +1,32 @@
-import GetAllProjects from "@/util/GetAllProjects";
-import { ReactNode } from "react";
-import { SortProjectsContext } from "./ProjectsContext";
-import Header from "./Header";
+/* eslint-disable react-hooks/exhaustive-deps */
+'use client'
 
-export default async function HomeLayout({children}: {children: ReactNode}) {
-  const projects = await GetAllProjects();
+import { ReactNode } from "react"
+import { LayoutContextProvider, useLayout } from "./LayoutContext";
+import DarkModeToggler from "./DarkModeToggler";
+import Hero from "./Hero";
+
+export default function Layout({children}: {children: ReactNode}) {
 
   return (
-    <div className='h-screen w-screen'>
-      <SortProjectsContext originalProjects={projects}>
-        <Header>
-          {children}
-        </Header>
-      </SortProjectsContext>
-    </div>
+    <LayoutContextProvider>
+        
+      <NavbarBody />
+      <DarkModeToggler />
+      <Hero />
+        
+      {children}
+    </LayoutContextProvider>
+  )
+}
+
+function NavbarBody() {
+  const LayoutContext = useLayout();
+
+  if (!LayoutContext || !LayoutContext.scrolled)
+    return null
+
+  return (
+    <div className="h-14 w-full bg-white bg-opacity-25 fixed left-0"></div>
   )
 }
