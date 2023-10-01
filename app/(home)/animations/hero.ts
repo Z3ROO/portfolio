@@ -23,7 +23,6 @@ export function AnimateName(
   containerMarginSize: number
   ) {
   const h1Pos = h1.getBoundingClientRect();
-
     if (nameInterObs === 'above' && animationCache['name'].state !== 'above') {
 
       animationCache['name'] = {y: h1Pos.y, x: h1Pos.x, state: 'above'};
@@ -38,6 +37,9 @@ export function AnimateName(
         h1.style.left = `${containerMarginSize! + 48}px`
         h1.style.top = `${12}px`
       }, 100)
+    }
+    else if (nameInterObs === 'above' && animationCache['name'].state === 'above') {
+      h1.style.left = `${containerMarginSize! + 48}px`
     }
     else if (nameInterObs !== 'above' && animationCache['name'].state !== 'in') {
       
@@ -73,6 +75,9 @@ export function AnimateSurname(
         h1.style.left = `${containerMarginSize! + 120}px`
         h1.style.top = `${12}px`
       }, 100)
+    }
+    else if (surnameInterObs === 'above' && animationCache['surname'].state === 'above') {
+      h1.style.left = `${containerMarginSize! + 120}px`
     }
     else if (surnameInterObs !== 'above' && animationCache['surname'].state !== 'in') {
       
@@ -110,6 +115,9 @@ export function AnimateTitle(
         title.style.left = `${containerMarginSize! + 212}px`;
       }, 100)
     }
+    else if (titleInterObs === 'above' && animationCache['title'].state === 'above') {
+      title.style.left = `${containerMarginSize! + 212}px`;
+    }
     else if (titleInterObs !== 'above' && animationCache['title'].state !== 'in') {
       animationCache['title'].state = 'in';
 
@@ -142,9 +150,12 @@ export function AnimateGithubIcon(
       icon.style.lineHeight = `${1.75}rem`
 
       setTimeout(() => {
-        icon.style.left = `calc(100% - ${containerMarginSize! + (iconPos.width*2) + 48 + 32}px)`
+        icon.style.left = `calc(100% - ${containerMarginSize! + (32*2) + 48 + 32}px)`
         icon.style.top = `${16}px`
       }, 100)
+    }
+    else if (iconInterObs === 'above' && animationCache['github'].state === 'above') {
+      icon.style.left = `calc(100% - ${containerMarginSize! + (32*2) + 48 + 32}px)`
     }
     else if (iconInterObs !== 'above' && animationCache['github'].state !== 'in') {
       
@@ -177,9 +188,12 @@ export function AnimateLinkedinIcon(
       icon.style.lineHeight = `${1.75}rem`
 
       setTimeout(() => {
-        icon.style.left = `calc(100% - ${containerMarginSize! + iconPos.width + 48 + 32}px)`
+        icon.style.left = `calc(100% - ${containerMarginSize! + 32 + 48 + 32}px)`
         icon.style.top = `${16}px`
       }, 100)
+    }
+    else if (iconInterObs === 'above' && animationCache['linkedin'].state === 'above') {
+      icon.style.left = `calc(100% - ${containerMarginSize! + 32 + 48 + 32}px)`
     }
     else if (iconInterObs !== 'above' && animationCache['linkedin'].state !== 'in') {
       
