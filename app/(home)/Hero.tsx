@@ -65,7 +65,7 @@ function NameAndTitle({ containerMarginSize }:{containerMarginSize: number}) {
     const title = titleRef.current;
     AnimateTitle(title, titleInterObs, containerMarginSize)
 
-  }, [titleRef.current, titleInterObs]);
+  }, [titleRef.current, titleInterObs, containerMarginSize]);
 
   return (
     <div className="relative select-none">
