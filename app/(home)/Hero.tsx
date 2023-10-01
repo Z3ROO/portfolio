@@ -70,15 +70,24 @@ function NameAndTitle({ containerMarginSize }:{containerMarginSize: number}) {
   return (
     <div className="relative select-none">
       <div className="h-16 sm:h-20 md:h-28 lg:h-36 relative z-10"  ref={h1DivNameRef}>
-        <h1 className="font-bold text-5xl sm:text-6xl md:text-8xl lg:text-9xl transition-all duration-300" ref={h1NameRef}>Pedro </h1>
+        <h1 className="font-bold text-red-100 text-5xl sm:text-6xl md:text-8xl lg:text-9xl transition-all duration-300" ref={h1NameRef}
+          style={{
+            textShadow: surnameInterObs === 'above' ? '' : '0 8px 16px rgba(0, 0, 0, 0.3)' 
+          }}
+        >Pedro </h1>
         <span className="invisible">.</span>
       </div>
       <div className="h-16 sm:h-20 md:h-28 lg:h-36 relative z-10" ref={h1DivSurnameRef}>
-        <h1 className="font-bold text-5xl sm:text-6xl md:text-8xl lg:text-9xl transition-all duration-300" ref={h1SurnameRef}>Ribeiro</h1>
+        <h1 
+          className="font-bold text-red-100 text-5xl sm:text-6xl md:text-8xl lg:text-9xl transition-all duration-300 text-s" ref={h1SurnameRef}
+          style={{
+            textShadow: surnameInterObs === 'above' ? '' : '0 8px 16px rgba(0, 0, 0, 0.3)' 
+          }}
+        >Ribeiro</h1>
         <span className="invisible">.</span>
       </div>
       <div ref={titleDivRef} className="h-12 relative z-10">
-        <p ref={titleRef} className="transition-all duration-300 text-base md:text-xl lg:text-2xl">A software engineer specialized in web technologies.</p>
+        <p ref={titleRef} className="text-red-400 text-base md:text-xl lg:text-2xl transition-all duration-300">A software engineer specialized in web technologies.</p>
         <span className="invisible">.</span>
       </div>
       <div
