@@ -1,4 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+
+'use client'
 import { createContext, useContext, ReactNode, useState, Dispatch, SetStateAction, useEffect, useRef } from "react";
 
 interface ILayoutContext {

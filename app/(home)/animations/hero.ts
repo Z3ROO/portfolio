@@ -10,11 +10,11 @@ interface AnimationCacheGroup {
 }
 
 const animationCache: AnimationCacheGroup = {
-  name: {y: 0, x: 0, state: 'in'},
-  surname : {y: 0, x: 0, state: 'in'},
-  title : {y: 0, x: 0, state: 'in'},
-  github : {y: 0, x: 0, state: 'in'},
-  linkedin : {y: 0, x: 0, state: 'in'}
+  name: {y: 0, x: 0, state: 'in' },
+  surname : {y: 0, x: 0, state: 'in' },
+  title : {y: 0, x: 0, state: 'in' },
+  github : {y: 0, x: 0, state: 'in' },
+  linkedin : {y: 0, x: 0, state: 'in' }
 }
 
 export function AnimateName(
@@ -25,10 +25,12 @@ export function AnimateName(
   const h1Pos = h1.getBoundingClientRect();
 
     if (nameInterObs === 'above' && animationCache['name'].state !== 'above') {
+
+      animationCache['name'] = {y: h1Pos.y, x: h1Pos.x, state: 'above'};
+
       h1.style.top = `${h1Pos.y}px`;
       h1.style.left = `${h1Pos.x}px`;
       h1.style.position = 'fixed';
-      animationCache['name'] = {y: h1Pos.y, x: h1Pos.x, state: 'above'};
       h1.style.fontSize = `${1.5}rem`;
       h1.style.lineHeight = `${2}rem`;
 
@@ -44,10 +46,10 @@ export function AnimateName(
       animationCache['name'].state = 'in';
       
       setTimeout(() => {
-        h1.style.fontSize = `${8}rem`;
-        h1.style.lineHeight = `${1}`;
+        h1.style.fontSize = '';
+        h1.style.lineHeight = '';
         h1.style.position = 'static';
-      }, 100)
+      }, 100);
     }
 }
 
@@ -59,10 +61,11 @@ export function AnimateSurname(
   const h1Pos = h1.getBoundingClientRect();
 
     if (surnameInterObs === 'above' && animationCache['surname'].state !== 'above') {
+      animationCache['surname'] = {y: h1Pos.y, x: h1Pos.x, state: 'above'};
+
       h1.style.top = `${h1Pos.y}px`;
       h1.style.left = `${h1Pos.x}px`;
       h1.style.position = 'fixed';
-      animationCache['surname'] = {y: h1Pos.y, x: h1Pos.x, state: 'above'};
       h1.style.fontSize = `${1.5}rem`;
       h1.style.lineHeight = `${2}rem`;
 
@@ -78,10 +81,10 @@ export function AnimateSurname(
       animationCache['surname'].state = 'in';
       
       setTimeout(() => {
-        h1.style.fontSize = `${8}rem`
-        h1.style.lineHeight = `${1}`;
-        h1.style.position = 'static'
-      }, 100)
+        h1.style.fontSize = '';
+        h1.style.lineHeight = '';
+        h1.style.position = '';
+      }, 100);
     }
 }
 
@@ -114,10 +117,10 @@ export function AnimateTitle(
       title.style.left = `${animationCache['title'].x}px`;
 
       setTimeout(() => {
-        title.style.position = 'static'
         title.textContent = 'A software engineer specialized in web technologies.';
-        title.style.fontSize = `${1.5}rem`;
-        title.style.lineHeight = `${2}rem`;
+        title.style.position = ''
+        title.style.fontSize = '';
+        title.style.lineHeight = '';
       }, 100)
     }
 }
@@ -130,10 +133,11 @@ export function AnimateGithubIcon(
   const iconPos = icon.getBoundingClientRect();
 
     if (iconInterObs === 'above' && animationCache['github'].state !== 'above') {
+      animationCache['github'] = {y: iconPos.y, x: iconPos.x, state: 'above'};
+
       icon.style.top = `${iconPos.y}px`;
       icon.style.left = `${iconPos.x}px`;
       icon.style.position = 'fixed';
-      animationCache['github'] = {y: iconPos.y, x: iconPos.x, state: 'above'}
       icon.style.fontSize = `${1.25}rem`
       icon.style.lineHeight = `${1.75}rem`
 
@@ -149,10 +153,10 @@ export function AnimateGithubIcon(
       animationCache['github'].state = 'in';
       
       setTimeout(() => {
-        icon.style.fontSize = `${2.25}rem`
-        icon.style.lineHeight = `${2.5}rem`
-        icon.style.position = 'static';
-      }, 100)
+        icon.style.fontSize = '';
+        icon.style.lineHeight = '';
+        icon.style.position = '';
+      }, 100);
     }
 }
 
@@ -164,10 +168,11 @@ export function AnimateLinkedinIcon(
     const iconPos = icon.getBoundingClientRect();
 
     if (iconInterObs === 'above' && animationCache['linkedin'].state !== 'above') {
+      animationCache['linkedin'] = {y: iconPos.y, x: iconPos.x, state: 'above'};
+
       icon.style.top = `${iconPos.y}px`;
       icon.style.left = `${iconPos.x}px`;
       icon.style.position = 'fixed';
-      animationCache['linkedin'] = {y: iconPos.y, x: iconPos.x, state: 'above'}
       icon.style.fontSize = `${1.25}rem`
       icon.style.lineHeight = `${1.75}rem`
 
@@ -183,9 +188,9 @@ export function AnimateLinkedinIcon(
       animationCache['linkedin'].state = 'in';
       
       setTimeout(() => {
-        icon.style.fontSize = `${2.25}rem`
-        icon.style.lineHeight = `${2.5}rem`
-        icon.style.position = 'static';
-      }, 100)
+        icon.style.fontSize = '';
+        icon.style.lineHeight = '';
+        icon.style.position = '';
+      }, 100);
     }
 }
