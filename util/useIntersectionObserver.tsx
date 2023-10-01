@@ -17,17 +17,14 @@ export default function useIntersectionObserver(element: RefObject<HTMLElement>,
       
       if (entry.isIntersecting) { 
         setState('in');
-        console.log('in');
         
       }
       else {
         if (entry.boundingClientRect.top < (options?.above ?? 0)) {
           setState('above');
-          console.log('above');
         }
         else {
           setState('below');
-          console.log('below');
         }
       }
       
