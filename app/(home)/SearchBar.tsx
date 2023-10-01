@@ -16,7 +16,7 @@ export default function SearchBar() {
   const {searchInput, setSearchInput} = projectsContext;
 
   return (
-    <div className="flex justify-end items-center md:visible invisible">
+    <div className="flex justify-end items-center md:visible invisible p-6">
       <AiOutlineSearch className="text-red-800 w-5 h-5 mr-2 opacity-60" />
       <div className="relative group">
         <input 
