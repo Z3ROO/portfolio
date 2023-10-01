@@ -4,17 +4,13 @@
 import { ReactNode } from "react"
 import { LayoutContextProvider, useLayout } from "./LayoutContext";
 import DarkModeToggler from "./DarkModeToggler";
-import Hero from "./Hero";
 
 export default function Layout({children}: {children: ReactNode}) {
 
   return (
     <LayoutContextProvider>
-        
       <NavbarBody />
       <DarkModeToggler />
-      <Hero />
-        
       {children}
     </LayoutContextProvider>
   )

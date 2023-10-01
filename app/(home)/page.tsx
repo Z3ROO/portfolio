@@ -4,12 +4,14 @@ import { SortableProjects } from "./ClientProjectsShowcase";
 import { ProjectDisplay } from "./ProjectDisplay";
 import { SortProjectsContext } from "./ProjectsContext";
 import SearchBar from "./SearchBar";
+import Hero from "./Hero";
 
 
 export default async function Home() {
 
   return (
     <main className="">
+      <Hero />
       <ProjectsShowcase />
     </main>
   )
