@@ -9,7 +9,7 @@ interface ILayoutContext {
   setContainerMarginSize: Dispatch<SetStateAction<number>>
 }
 
-const LayoutContext = createContext<ILayoutContext|null>(null)
+const LayoutContext = createContext<ILayoutContext|null>(null);
 
 export const useLayout = () => useContext(LayoutContext);
 
@@ -22,13 +22,21 @@ export function LayoutContextProvider({children}: {children: ReactNode}) {
   useEffect(() => {
     if (!containerRef.current)
       return;
+    const handler = () => {
+      const container = containerRef.current!;
+      const containerWidth = container.getBoundingClientRect().width;
+      const windowWidth = window.innerWidth;
 
-    const container = containerRef.current!;
-    const containerWidth = container.getBoundingClientRect().width;
-    const windowWidth = window.innerWidth;
+      setContainerMarginSize(Math.round((windowWidth - containerWidth)/2));
+    }
+    
+    handler();
 
-    setContainerMarginSize(Math.round((windowWidth - containerWidth)/2));
-  },[containerRef.current, window.innerWidth])
+    window.onresize = handler
+
+    return () => {window.onresize = null}
+
+  },[containerRef.current])
 
   return (
     <LayoutContext.Provider value={{
@@ -38,7 +46,7 @@ export function LayoutContextProvider({children}: {children: ReactNode}) {
       <div 
         onScroll={e => {
           const scrollPos = (e.target as HTMLElement).scrollTop;
-
+          
           if (scrollPos < 96 && scrolled === true)
             setScrolled(false);
           else if (scrollPos > 96 && scrolled === false)
