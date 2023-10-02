@@ -5,6 +5,8 @@ import { ProjectDisplay } from "./ProjectDisplay";
 import { SortProjectsContext } from "./ProjectsContext";
 import SearchBar from "./SearchBar";
 import Hero from "./Hero";
+import SkillSet from "./SkillSet";
+import Image from "next/image";
 
 
 export default async function Home() {
@@ -12,7 +14,9 @@ export default async function Home() {
   return (
     <main className="">
       <Hero />
+      <SkillSet />
       <ProjectsShowcase />
+      <Image className="construction-sign w-24" src="/construction-sign.png" width={572} height={1201} alt="under construction" />
     </main>
   )
 }

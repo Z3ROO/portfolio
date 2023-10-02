@@ -94,7 +94,57 @@ body {
   opacity: 0.1; /* Adjust the opacity to control the intensity of the noise effect */
 }
 
-.grid-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);  
+@keyframes construction-sign-animation {
+  0% {
+    top: -100%;
+  }
+
+  50% {
+    top: 0;
+  }
+
+  60% {
+    top: -15px;
+  }
+
+  75% {
+    top: 0;
+  }
+
+  90% {
+    top: -5px
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes sign{
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+
+  25% {
+    transform: translateX(-2px) translateY(-2px);
+  }
+
+  50% {
+    transform: translateX(0px) translateY(0px);
+  }
+
+  75%{
+    transform:translateX(2px) translateY(-2px);
+  }
+
+  100% {
+    transform: translateX(0px) translateY(0px);
+  }
+}
+
+.construction-sign {
+  position: fixed;
+  z-index: 20;
+  animation: construction-sign-animation 3s forwards, sign 5s infinite alternate;
+  transition: all;
 }
