@@ -8,7 +8,7 @@ The tool is created as simple function that receive the parameters passed as arg
 
 const climMetadata: ProjectMetadata = {
   "name": "CLI Maker",
-  priority: 3,
+  priority: 4,
   "shortDescription": "  A simple command line tool maker that parses and organize the arguments passed through argv.",
   description,
   "id": "clim",
