@@ -4,28 +4,32 @@ import { BiLogoTypescript } from 'react-icons/bi';
 import { MdSecurity, MdScreenshotMonitor, MdWeb, MdArchitecture } from 'react-icons/md'
 import { PiPathBold } from 'react-icons/pi';
 import { FiArrowUpRight } from 'react-icons/fi';
+import { SectionTitle } from '@/components/SectionTitle';
 
 export default function SkillSet() {
   return (
-    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 w-full p-8'>
-      <Skill Icon={BiLogoTypescript} title='Fluent Typescript'>
-        Any technology, framework or library derived from Javascript sinks in intuitevelly.
-      </Skill>
-      <Skill Icon={MdWeb} title='Web Development'>
-        Web development is easy they said. Have you tried to deliver responsive images?
-      </Skill>
-      <Skill Icon={MdSecurity} title='Web Security/Hacking'>
-        To keep one safe, one must know the existing threats and one must know how to threat.
-      </Skill>
-      <Skill Icon={MdScreenshotMonitor} title='All Screens'>
-        Not just responsive design, but all platforms, leveraging web based technologies.
-      </Skill>
-      <Skill Icon={PiPathBold} title='UX Design'>
-        An alchemy of aesthetics and usability, shaping digital journeys that gets the job done without trying.
-      </Skill>
-      <Skill Icon={MdArchitecture} title='Design and Architecture'>
-        A holistic view of the craft makes everything easier.
-      </Skill>
+    <div>
+      <SectionTitle>Skill Set</SectionTitle>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 w-full p-8'>
+        <Skill Icon={BiLogoTypescript} title='Fluent Typescript'>
+          Any technology, framework or library derived from Javascript sinks in intuitevelly.
+        </Skill>
+        <Skill Icon={MdWeb} title='Web Development'>
+          Web development is easy they said. Have you tried to deliver responsive images?
+        </Skill>
+        <Skill Icon={MdSecurity} title='Web Security/Hacking'>
+          To keep one safe, one must know the existing threats and one must know how to threat.
+        </Skill>
+        <Skill Icon={MdScreenshotMonitor} title='All Screens'>
+          Not just responsive design, but all platforms, leveraging web based technologies.
+        </Skill>
+        <Skill Icon={PiPathBold} title='UX Design'>
+          An alchemy of aesthetics and usability, shaping digital journeys that gets the job done without trying.
+        </Skill>
+        <Skill Icon={MdArchitecture} title='Design and Architecture'>
+          A holistic view of the craft makes everything easier.
+        </Skill>
+      </div>
     </div>
   )
 }

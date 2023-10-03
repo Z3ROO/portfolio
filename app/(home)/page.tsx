@@ -7,6 +7,7 @@ import SearchBar from "./SearchBar";
 import Hero from "./Hero";
 import SkillSet from "./SkillSet";
 import Image from "next/image";
+import { SectionTitle } from "@/components/SectionTitle";
 
 
 export default async function Home() {
@@ -26,6 +27,7 @@ async function ProjectsShowcase() {
   const projects = await GetAllProjects();
   return (
     <SortProjectsContext originalProjects={projects}>
+      <SectionTitle>Projects</SectionTitle>
       <SearchBar />
       <div className="pb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
