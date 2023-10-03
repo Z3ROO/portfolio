@@ -27,7 +27,7 @@ export default function RootLayout({
         <style>{hljs_dark_theme}</style>
       </Head>
       <body className={inter.className+' h-screen'}>
-        <div className='h-screen w-screen bg-gray-900 text-red-100'>
+        <div className='h-screen w-screen bg-gray-800 text-red-100'>
           {children}
           {modal}
         </div>
