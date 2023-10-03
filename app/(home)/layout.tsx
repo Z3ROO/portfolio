@@ -24,7 +24,7 @@ function NavbarBody() {
 
   return (
     <div 
-      className="h-14 w-full bg-gray-550 bg-opacity-50 fixed left-0 z-10 transition-transform duration-500"
+      className="h-14 w-full bg-gray-900 bg-opacity-50 fixed left-0 z-10 transition-transform duration-500"
       style={{
         backdropFilter: 'blur(4px)',
         transform: LayoutContext.scrolled ? 'none' : 'translateY(-100%)'
