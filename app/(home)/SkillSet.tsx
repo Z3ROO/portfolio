@@ -5,6 +5,7 @@ import { MdSecurity, MdScreenshotMonitor, MdWeb, MdArchitecture } from 'react-ic
 import { PiPathBold } from 'react-icons/pi';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { SectionTitle } from '@/components/SectionTitle';
+import { transform } from 'typescript';
 
 export default function SkillSet() {
   return (
@@ -37,8 +38,12 @@ export default function SkillSet() {
 function Skill({Icon, children, title}: {Icon: IconType, children: ReactNode, title: string}) {
   return (
     <div className='flex flex-col p-4 rounded-sm bg-gray-600 shadow-md w-full sm:w-64 md:w-72 h-min md:h-72 mx-auto select-none cursor-pointer group transition-all'>
-      <div className='text-red-400 text-3xl md:text-6xl mb-2'>
-        <Icon />
+      <div className='h-4 md:h-8 relative'>
+        <div className='absolute -top-12 -left-0 text-red-400 text-6xl md:text-7xl mb-2 w-min'>
+          <Icon style={{
+            filter:'drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5))'
+          }}/>
+        </div>
       </div>
       <p className='text-xl text-red-400 my-2 border-t-2 border-red-400 w-min whitespace-nowrap'>{title}</p>
       <p className='hidden md:block grow'>{children}</p>
