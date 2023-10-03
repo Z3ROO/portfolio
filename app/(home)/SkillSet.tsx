@@ -1,8 +1,9 @@
 import { ReactNode } from 'react';
 import { IconType } from 'react-icons';
 import { BiLogoTypescript } from 'react-icons/bi';
-import { MdSecurity, MdScreenshotMonitor, MdWeb, MdArchitecture } from 'react-icons/md'
+import { MdSecurity, MdScreenshotMonitor, MdArchitecture } from 'react-icons/md';
 import { PiPathBold } from 'react-icons/pi';
+import { TbWorldWww } from 'react-icons/tb';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { SectionTitle } from '@/components/SectionTitle';
 import { transform } from 'typescript';
@@ -15,7 +16,7 @@ export default function SkillSet() {
         <Skill Icon={BiLogoTypescript} title='Fluent Typescript'>
           Any technology, framework or library derived from Javascript sinks in intuitevelly.
         </Skill>
-        <Skill Icon={MdWeb} title='Web Development'>
+        <Skill Icon={TbWorldWww} title='Web Development'>
           Web development is easy they said. Have you tried to deliver responsive images?
         </Skill>
         <Skill Icon={MdSecurity} title='Web Security/Hacking'>
