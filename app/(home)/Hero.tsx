@@ -90,20 +90,13 @@ function NameAndTitle({ containerMarginSize }:{containerMarginSize: number}) {
         <p ref={titleRef} className="text-red-400 text-base md:text-xl lg:text-2xl transition-all duration-300">A software engineer specialized in web technologies.</p>
         <span className="invisible">.</span>
       </div>
-      <div
-          style={{
-            background: 'radial-gradient(circle, rgba(248, 113, 113, 0.055) 11%, rgba(248, 113, 113, 0) 66%)',
-            opacity: nameInterObs !== 'above' ? '1' : '0'
-          }}
-          className="noise absolute top-0 right-full -translate-y-1/3 translate-x-1/2 w-[750px] h-[750px] rounded-full transition-opacity duration-500"
-        />
-        <div 
-          style={{
-            background: 'radial-gradient(circle, rgba(248, 113, 113, 0.075) 11%, rgba(248, 113, 113, 0) 66%)',
-            opacity: surnameInterObs !== 'above' ? '1' : '0'
-          }} 
-          className="noise absolute top-0 right-0 -translate-y-1/4 translate-x-1/3 w-[900px] h-[900px] rounded-full transition-opacity duration-500"
-        />
+      <div 
+        style={{
+          background: 'radial-gradient(circle, rgba(148, 118, 118, 0.118) 11%, rgba(248, 113, 113, 0) 66%)',
+          opacity: surnameInterObs !== 'above' ? '1' : '0'
+        }} 
+        className="noise absolute top-0 right-0 -translate-y-2/4 translate-x-1/4 w-[1500px] h-[1500px] rounded-full transition-opacity duration-500"
+      />
     </div>
   )
 }
