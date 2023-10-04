@@ -10,9 +10,9 @@ import { transform } from 'typescript';
 
 export default function SkillSet() {
   return (
-    <div>
+    <div className='relative'>
       <SectionTitle>Skill Set</SectionTitle>
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 w-full p-8'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 w-full p-8 relative z-[1]'>
         <Skill Icon={BiLogoTypescript} title='Fluent Typescript'>
           Any technology, framework or library derived from Javascript sinks in intuitevelly.
         </Skill>
@@ -32,6 +32,13 @@ export default function SkillSet() {
           A holistic view of the craft makes everything easier.
         </Skill>
       </div>
+      <div 
+        style={{
+          background: 'radial-gradient(circle, rgba(148, 118, 118, 0.118) 11%, rgba(248, 113, 113, 0) 66%)',
+          
+        }} 
+        className="noise absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[1500px] h-[1500px] rounded-full transition-opacity duration-500"
+      />
     </div>
   )
 }
