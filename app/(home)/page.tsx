@@ -1,9 +1,6 @@
 import GetAllProjects from "@/util/GetAllProjects";
-import { HideStaticProjects } from "./HideStaticProjects";
-import { SortableProjects } from "./ClientProjectsShowcase";
 import { ProjectDisplay } from "./ProjectDisplay";
 import { SortProjectsContext } from "./ProjectsContext";
-import SearchBar from "./SearchBar";
 import Hero from "./Hero";
 import SkillSet from "./SkillSet";
 import Image from "next/image";
@@ -26,19 +23,17 @@ async function ProjectsShowcase() {
   
   const projects = await GetAllProjects();
   return (
-    <SortProjectsContext originalProjects={projects}>
+    <SortProjectsContext>
       <SectionTitle>Projects</SectionTitle>
-      <SearchBar />
       <div className="pb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-          <HideStaticProjects>
-            {
-              projects.map(project => {
-                return <ProjectDisplay key={project.id} project={project}/>
-              })
-            }
-          </HideStaticProjects>
-          <SortableProjects />
+
+          {
+            projects.map(project => {
+              return <ProjectDisplay key={project.id} project={project}/>
+            })
+          }
+
         </div>
       </div>
     </SortProjectsContext>

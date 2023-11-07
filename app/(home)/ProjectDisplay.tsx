@@ -15,7 +15,6 @@ export function ProjectDisplay(props: {project: ProjectMetadata}) {
             <div className="flex flex-col">  
                 <h3 className="text-5xl font-bold break-words text-red-300 p-2 pb-6">{project.name}</h3>
                 <div className="relative">
-                  
                   <Image 
                     src={`/projects/${project.id}/thumbnail.jpg`} 
                     className="opacity-50 group-hover:opacity-100 transition-all duration-500" 

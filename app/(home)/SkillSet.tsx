@@ -6,7 +6,6 @@ import { PiPathBold } from 'react-icons/pi';
 import { TbWorldWww } from 'react-icons/tb';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { SectionTitle } from '@/components/SectionTitle';
-import { transform } from 'typescript';
 
 export default function SkillSet() {
   return (
