@@ -98,16 +98,11 @@ async function CustomBody({project_id}: {project_id: string}) {
         component = await import(`../(projects-custom-body)/${project_id}`)
       }
       catch(err) {
-        component = NoCustomBody;
+        component = () => null;
       }
 
       return component;
     });
 
   return <CustomBodyComponent />
-}
-
-
-function NoCustomBody () {
-  return null
 }
